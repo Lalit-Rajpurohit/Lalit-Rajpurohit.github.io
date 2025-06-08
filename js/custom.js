@@ -210,11 +210,11 @@ $(window).on("load", function () {
     /*=========================================================================
      Submit Contact with AWS API Gateway
 	 =========================================================================*/
-    let _config = {
-        api: {
-            invokeUrl: 'https://oreymumvah.execute-api.ap-southeast-1.amazonaws.com/prod'
-        }
-    }
+    // let _config = {
+    //     api: {
+    //         invokeUrl: 'https://oreymumvah.execute-api.ap-southeast-1.amazonaws.com/prod'
+    //     }
+    // }
 
     jQuery(document).ready(function ($) {
         let contactForm = $("#contact-form");
