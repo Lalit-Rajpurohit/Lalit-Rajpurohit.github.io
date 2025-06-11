@@ -425,29 +425,3 @@ $(function () {
 });
 
 
-document.getElementById('contactsform').addEventListener('submit', async function (e) {
-      e.preventDefault();
-
-      const formData = new FormData(this);
-      const data = {
-        name: formData.get('name'),
-        sub: formData.get('sub'),
-        email: formData.get('email'),
-        message: formData.get('message')
-      };
-
-      const res = await fetch('https://i8tydyul4f.execute-api.ap-south-1.amazonaws.com/prod', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data)
-      });
-
-      const statusEl = document.getElementById('status');
-      if (res.ok) {
-        statusEl.textContent = 'Message sent!';
-        this.reset();
-      } else {
-        const result = await res.json();
-        statusEl.textContent = 'Error: ' + (result.message || 'Failed to send.');
-      }
-    });

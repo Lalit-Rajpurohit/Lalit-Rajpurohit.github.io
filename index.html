@@ -486,7 +486,7 @@
                   </div> -->
               </div>
 
-              <button type="submit" name="submit" id="submit" value="Submit" class="btn btn-default">
+              <button type="submit" value="Submit" class="btn btn-default">
                 <i class="icon-paper-plane"></i>Send Message</button>
             </form>
             <!-- Contact Form end -->
@@ -504,7 +504,9 @@
     </a> -->
 
   <!-- SCRIPTS -->
-  <script src="js/jquery-1.12.3.min.js"></script>
+
+
+    <script src="js/jquery-1.12.3.min.js"></script>
   <script src="js/jquery.easing.min.js"></script>
   <script src="js/popper.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
@@ -520,6 +522,42 @@
   <script src="js/custom.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+
+  <script>
+        document.getElementById('contactsform').addEventListener('submit', async function (e) {
+      e.preventDefault();
+
+      console.log("test");
+      const formData = new FormData(this);
+      const data = {
+        name: formData.get('name'),
+        sub: formData.get('sub'),
+        email: formData.get('email'),
+        message: formData.get('message')
+      };
+
+      const res = await fetch('https://i8tydyul4f.execute-api.ap-south-1.amazonaws.com/prod', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+
+      const statusEl = document.getElementById('status');
+      if (res.ok) {
+        alert("message sent");
+        statusEl.textContent = 'Message sent!';
+        this.reset();
+      } else {
+        const result = await res.json();
+        statusEl.textContent = 'Error: ' + (result.message || 'Failed to send.');
+      }
+    });
+  </script>
+
+
+
+
 </body>
 
 </html>
