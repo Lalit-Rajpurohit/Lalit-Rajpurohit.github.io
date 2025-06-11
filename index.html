@@ -433,7 +433,7 @@
 
           <div class="col-md-8">
             <!-- Contact Form -->
-            <form id="contactsform" class="contact-form"  action="">
+            <form id="contactsform" class="contact-form">
               <div class="messages"></div>
 
               <div class="row">
@@ -523,35 +523,40 @@
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
-
-  
       <script>
-document.getElementById('contactsform').addEventListener('submit', async function (e) {
-      e.preventDefault();
+document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById('contact-form');
 
-      const formData = new FormData(this);
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault(); // ✅ Prevent page refresh
+
       const data = {
-        name: formData.get('name'),
-        email: formData.get('email'),
-        message: formData.get('message'),
-        sub: formData.get('sub')
+        name: form.name.value,
+        email: form.email.value,
+        sub: form.sub.value,
+        message: form.message.value
       };
 
-      const res = await fetch('https://0w2rgqkyac.execute-api.ap-south-1.amazonaws.com/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data)
-      });
+      try {
+        const response = await fetch('https://0w2rgqkyac.execute-api.ap-south-1.amazonaws.com/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
+        });
 
-      const statusEl = document.getElementById('status');
-      if (res.ok) {
-        statusEl.textContent = 'Message sent!';
-        this.reset();
-      } else {
-        const result = await res.json();
-        statusEl.textContent = 'Error: ' + (result.message || 'Failed to send.');
+        const result = await response.json();
+
+        if (response.ok) {
+          alert('✅ Message sent successfully!');
+          form.reset(); // ✅ Clear the form
+        } else {
+          alert('❌ Failed to send message: ' + result.message);
+        }
+      } catch (error) {
+        alert('❌ Error: ' + error.message);
       }
     });
+  });
 </script>
 
 
