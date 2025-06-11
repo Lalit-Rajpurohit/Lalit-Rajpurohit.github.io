@@ -537,7 +537,7 @@
         message: formData.get('message')
       };
 
-      const res = await fetch('https://0w2rgqkyac.execute-api.ap-south-1.amazonaws.com', {
+      const res = await fetch('https://0w2rgqkyac.execute-api.ap-south-1.amazonaws.com/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data)
