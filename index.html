@@ -524,36 +524,40 @@
   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 
-  <script>
-        document.getElementById('contactsform').addEventListener('submit', async function (e) {
-      e.preventDefault();
+  
+      <script>
+document.getElementById('contact-form').addEventListener('submit', async function (e) {
+  e.preventDefault();
 
-      console.log("test");
-      const formData = new FormData(this);
-      const data = {
-        name: formData.get('name'),
-        sub: formData.get('sub'),
-        email: formData.get('email'),
-        message: formData.get('message')
-      };
+  const form = e.target;
+  const data = {
+    name: form.name.value,
+    email:  form.email.value,
+    sub:  "FORM SUB" + form.sub.value,
+    message: form.message.value
+  };
 
-      const res = await fetch('https://0w2rgqkyac.execute-api.ap-south-1.amazonaws.com/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data)
-      });
-
-      const statusEl = document.getElementById('status');
-      if (res.ok) {
-        alert("message sent");
-        statusEl.textContent = 'Message sent!';
-        this.reset();
-      } else {
-        const result = await res.json();
-        statusEl.textContent = 'Error: ' + (result.message || 'Failed to send.');
-      }
+  try {
+    const response = await fetch('https://0w2rgqkyac.execute-api.ap-south-1.amazonaws.com/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
     });
-  </script>
+
+    const result = await response.json();
+    document.getElementById('response-message').textContent = result.message;
+
+    if (response.ok) {
+      form.reset(); 
+    }
+  } catch (err) {
+    document.getElementById('response-message').textContent = 'Something went wrong.';
+    console.error(err);
+  }
+});
+</script>
+
+
 
 
 
