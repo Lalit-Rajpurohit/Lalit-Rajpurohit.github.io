@@ -526,7 +526,7 @@
 
   
       <script>
-document.getElementById('contact-form').addEventListener('submit', async function (e) {
+document.getElementById('contactsform').addEventListener('submit', async function (e) {
   e.preventDefault();
 
   const form = e.target;
@@ -548,6 +548,7 @@ document.getElementById('contact-form').addEventListener('submit', async functio
     document.getElementById('response-message').textContent = result.message;
 
     if (response.ok) {
+      alert('✅ Message sent successfully!');
       form.reset(); 
     }
   } catch (err) {
