@@ -30,7 +30,8 @@ Description: Personal Portfolio & Resume HTML Template
 
 :root {
     --bg-white-color: #fff;
-    --bg-blue-color: #4a63e7;
+    --bg-blue-color: #407f96;
+    /* --bg-blue-color: #4a63e7; */
     --body-color: #f6f7ff;
     --shadow-color: 0 6px 15px 0 rgba(74, 99, 231, .2)
 }

@@ -560,8 +560,8 @@ document.addEventListener('DOMContentLoaded', function () {
         const result = await response.json();
 
         if (response.ok) {
-          alert('✅ Message sent successfully!');
           form.reset(); // ✅ Clear the form
+          alert('✅ Message sent successfully! \n I will reach out to you via email from my address rajpurohitlalit181@gmail.com. \n Please check your spam folder if you do not see it in your inbox');
         } else {
           alert('❌ Failed to send message: ' + result.message);
         }
