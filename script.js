@@ -35,11 +35,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
   form.addEventListener('submit', async function (e) {
     e.preventDefault(); // ✅ Prevent page refresh
-
+console.log("test");
     const data = {
       name: form.name.value,
       email: form.email.value,
-      sub: form.sub.value,
+      sub: form.subject.value,
       message: form.message.value
     };
 
