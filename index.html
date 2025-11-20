@@ -1,199 +1,435 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lalit-Rajpurohit | Cloud & DevOps Portfolio</title>
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { font-family: 'Segoe UI', sans-serif; font-size: 16px; scroll-behavior: smooth; }
-    body { background: #E5C9A2; color: #1F3526; }
-    a { text-decoration: none; color: inherit; }
-    ul { list-style: none; }
-    .wrapper { background: #F0E4D6; max-width: 1100px; margin: 2rem auto; padding: 2rem; border-radius: 1rem; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-    header { padding-bottom: 1rem; border-bottom: 2px solid #1F3526; }
-    nav { display: flex; justify-content: space-between; align-items: center; }
-    nav .logo { font-size: 1.5rem; font-weight: bold; }
-    nav ul { display: flex; gap: 1.5rem; }
-    nav li:hover { opacity: 0.8; }
-    section { padding: 4rem 0; }
-    h2 { font-size: 2rem; margin-bottom: 1rem; border-bottom: 2px solid #1F3526; display: inline-block; padding-bottom: 0.25rem; }
-    #about .intro { display: flex; flex-wrap: wrap; gap: 2rem; align-items: center; }
-    #about .intro img { width: 200px; border-radius: 50%; border: 4px solid #1F3526; }
-    #about .intro .text { flex: 1; }
-    #about .actions { margin-top: 1rem; display: flex; gap: 1rem; align-items: center; }
-    .btn { padding: 0.75rem 1.5rem; background: #1F3526; color: #E5C9A2; border-radius: 0.5rem; transition: 0.3s; }
-    .btn:hover { opacity: 0.9; }
-    .socials a { font-size: 1.5rem; margin-right: 0.5rem; color: #1F3526; }
-    #projects .grid, #certificates .cert-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
-    #projects .card, #certificates .cert-item { background: #1F3526; color: #E5C9A2; padding: 1.5rem; border-radius: 1rem; transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer; }
-    #projects .card:hover, #certificates .cert-item:hover { transform: translateY(-8px); box-shadow: 0 8px 20px rgba(0,0,0,0.2); }
-    #projects .card img, #certificates .cert-item img { width: 100%; height: 200px; border-radius: 0.75rem; margin-bottom: 1rem; }
-    .list { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
-    .list-item { background: #FFF; padding: 1.5rem; border-radius: 0.75rem; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      font-family: 'Segoe UI', sans-serif;
+      font-size: 16px;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #E5C9A2;
+      color: #1F3526;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    .wrapper {
+      background: #F0E4D6;
+      max-width: 1100px;
+      margin: 2rem auto;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    header {
+      padding-bottom: 1rem;
+      border-bottom: 2px solid #1F3526;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    nav li:hover {
+      opacity: 0.8;
+    }
+
+    section {
+      padding: 4rem 0;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid #1F3526;
+      display: inline-block;
+      padding-bottom: 0.25rem;
+    }
+
+    #about .intro {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    #about .intro img {
+      width: 200px;
+      border-radius: 50%;
+      border: 4px solid #1F3526;
+    }
+
+    #about .intro .text {
+      flex: 1;
+    }
+
+    #about .actions {
+      margin-top: 1rem;
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .btn {
+      padding: 0.75rem 1.5rem;
+      background: #1F3526;
+      color: #E5C9A2;
+      border-radius: 0.5rem;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      opacity: 0.9;
+    }
+
+    .socials a {
+      font-size: 1.5rem;
+      margin-right: 0.5rem;
+      color: #1F3526;
+    }
+
+    #projects .grid,
+    #certificates .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    #projects .card,
+    #certificates .cert-item {
+      background: #1F3526;
+      color: #E5C9A2;
+      padding: 1.5rem;
+      border-radius: 1rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+
+    #projects .card:hover,
+    #certificates .cert-item:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    #projects .card img,
+    #certificates .cert-item img {
+      width: 100%;
+      height: 200px;
+      border-radius: 0.75rem;
+      margin-bottom: 1rem;
+    }
+
+    .list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .list-item {
+      background: #FFF;
+      padding: 1.5rem;
+      border-radius: 0.75rem;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
     /* #skills .skills-container { display: grid; grid-template-columns: 1fr 2fr; gap: 2rem; } */
     /* #skills .category { background: #FFF; padding: 1.5rem; border-radius: 0.75rem; box-shadow: 0 2px 5px rgba(0,0,0,0.1); } */
     /* #skills .skills-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1rem; } */
-    #contact .contact-container { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
-    #contact .info { background: #FFF; padding: 1.5rem; border-radius: 0.75rem; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-    #contact .info .socials { margin-top: 1rem; }
-    #contact form { display: flex; flex-direction: column; gap: 1rem; }
-    #contact input, #contact textarea { padding: 0.75rem; border: 2px solid #1F3526; border-radius: 0.5rem; resize: vertical; }
-    #contact button { padding: 0.75rem; background: #1F3526; color: #E5C9A2; border: none; border-radius: 0.5rem; cursor: pointer; }
-    #contact button:hover { opacity: 0.9; }
-    .a{ font-weight: bold; font-size:medium; padding-top: 5px; }
-    footer { text-align: center; padding: 1rem 0; font-size: 0.875rem; border-top: 1px solid #1F3526; }
-    @media (max-width: 768px) { nav ul { display: none; } #skills .skills-container, #contact .contact-container { grid-template-columns: 1fr; } }
+    #contact .contact-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    #contact .info {
+      background: #FFF;
+      padding: 1.5rem;
+      border-radius: 0.75rem;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    #contact .info .socials {
+      margin-top: 1rem;
+    }
+
+    #contact form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    #contact input,
+    #contact textarea {
+      padding: 0.75rem;
+      border: 2px solid #1F3526;
+      border-radius: 0.5rem;
+      resize: vertical;
+    }
+
+    #contact button {
+      padding: 0.75rem;
+      background: #1F3526;
+      color: #E5C9A2;
+      border: none;
+      border-radius: 0.5rem;
+      cursor: pointer;
+    }
+
+    #contact button:hover {
+      opacity: 0.9;
+    }
+
+    .a {
+      font-weight: bold;
+      font-size: medium;
+      padding-top: 5px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem 0;
+      font-size: 0.875rem;
+      border-top: 1px solid #1F3526;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        display: none;
+      }
+
+      #skills .skills-container,
+      #contact .contact-container {
+        grid-template-columns: 1fr;
+      }
+    }
 
 
 
- /* --- Card Grid --- */
- .card-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Wider cards */
-            gap: 30px;
-            perspective: 1200px; /* Enhanced 3D effect */
-        }
+    /* --- Card Grid --- */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      /* Wider cards */
+      gap: 30px;
+      perspective: 1200px;
+      /* Enhanced 3D effect */
+    }
 
-        /* --- Flip Card --- */
-        .flip-card {
-            background-color: transparent;
-            width: 100%;
-            height: 400px; /* Increased height for more content */
-            border: none;
-        }
+    /* --- Flip Card --- */
+    .flip-card {
+      background-color: transparent;
+      width: 100%;
+      height: 400px;
+      /* Increased height for more content */
+      border: none;
+    }
 
-        .flip-card-inner {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            text-align: center;
-            transition: transform 0.7s;
-            transform-style: preserve-3d;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-            border-radius: 12px;
-        }
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.7s;
+      transform-style: preserve-3d;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      border-radius: 12px;
+    }
 
-        .flip-card:hover .flip-card-inner {
-            transform: rotateY(180deg);
-        }
+    .flip-card:hover .flip-card-inner {
+      transform: rotateY(180deg);
+    }
 
-        /* --- Card Front & Back --- */
-        .flip-card-front, .flip-card-back {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            -webkit-backface-visibility: hidden; /* Safari */
-            backface-visibility: hidden;
-            border-radius: 12px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 25px;
-            box-sizing: border-box;
-        }
+    /* --- Card Front & Back --- */
+    .flip-card-front,
+    .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      -webkit-backface-visibility: hidden;
+      /* Safari */
+      backface-visibility: hidden;
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 25px;
+      box-sizing: border-box;
+    }
 
-        .flip-card-front {
-            background-color: #ffffff;
-        }
+    .flip-card-front {
+      background-color: #ffffff;
+    }
 
-        .flip-card-front .icon {
-            font-size: 4rem;
-            color: #E5C9A2;
-            margin-bottom: 20px;
-        }
+    .flip-card-front .icon {
+      font-size: 4rem;
+      color: #E5C9A2;
+      margin-bottom: 20px;
+    }
 
-        .flip-card-front h3 {
-            font-size: 1.5rem;
-            margin: 0;
-            color: #1F3526;
-        }
+    .flip-card-front h3 {
+      font-size: 1.5rem;
+      margin: 0;
+      color: #1F3526;
+    }
 
-        .flip-card-back {
-            background-color: #1F3526;
-            color: #F0E4D6;
-            transform: rotateY(180deg);
-            justify-content: flex-start; /* Align content to the top */
-        }
-        
-        .flip-card-back h3 {
-            font-size: 1.3rem;
-            color: #E5C9A2;
-            margin-top: 0;
-            margin-bottom: 20px;
-            border-bottom: 1px solid rgba(229, 201, 162, 0.3);
-            padding-bottom: 10px;
-            width: 100%;
-        }
+    .flip-card-back {
+      background-color: #1F3526;
+      color: #F0E4D6;
+      transform: rotateY(180deg);
+      justify-content: flex-start;
+      /* Align content to the top */
+    }
 
-        /* --- Skills Grid on the Back --- */
-        .skills-grid-back {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr); /* 2 columns on the back */
-            gap: 10px;
-            width: 100%;
-        }
+    .flip-card-back h3 {
+      font-size: 1.3rem;
+      color: #E5C9A2;
+      margin-top: 0;
+      margin-bottom: 20px;
+      border-bottom: 1px solid rgba(229, 201, 162, 0.3);
+      padding-bottom: 10px;
+      width: 100%;
+    }
 
-        .skill-item-back {
-            background-color: rgba(240, 228, 214, 0.1);
-            padding: 10px;
-            border-radius: 6px;
-            font-size: 0.9rem;
-            text-align: center;
-        }
- 
-        
+    /* --- Skills Grid on the Back --- */
+    .skills-grid-back {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      /* 2 columns on the back */
+      gap: 10px;
+      width: 100%;
+    }
 
+    .skill-item-back {
+      background-color: rgba(240, 228, 214, 0.1);
+      padding: 10px;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      text-align: center;
+    }
+
+    /* Gold Certificate Styles */
+    .gold-cert-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 350px));
+      gap: 2rem;
+      justify-content: start;
+    }
+
+    .gold-cert-item {
+      position: relative;
+      background: linear-gradient(135deg, #1F3526 0%, #2a4a35 100%);
+      border: 3px solid #D4AF37 !important;
+      box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+      max-width: 350px;
+    }
+
+    .verify-btn {
+      display: inline-block;
+      margin-top: 0.5rem;
+      padding: 0.5rem 1rem;
+      background: #D4AF37;
+      color: #1F3526;
+      border-radius: 0.5rem;
+      font-weight: bold;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+      border: 2px solid #D4AF37;
+    }
+
+    .verify-btn:hover {
+      background: transparent;
+      color: #D4AF37;
+      transform: scale(1.05);
+    }
+
+    .verify-btn i {
+      margin-right: 0.3rem;
+    }
   </style>
 
 
 
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-   <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&family=Inter:wght@300;400&display=swap"
+    rel="stylesheet">
   <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
 
 
 </head>
+
 <body>
 
   <!-- ==========================
      1. LEFT-CENTER NAVBAR
 ========================== -->
-<nab id="navbar" class="nav float-card">
-<!-- Mini profile -->
-<div class="mini-profile">
-  <img src="/assets/lalit.png" alt="Lalit">
-  <span>Lalit</span>
-</div>
+  <nab id="navbar" class="nav float-card">
+    <!-- Mini profile -->
+    <div class="mini-profile">
+      <img src="/assets/lalit.png" alt="Lalit">
+      <span>Lalit</span>
+    </div>
 
-<div class="nav-toggle"><i class="fa-solid fa-bars"></i></div>
-<ul class="nav-links">
-    <hr>
-    <li><a href="#about">About</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#certificates">certificates</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#experience">Experience</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <div class="nav-toggle"><i class="fa-solid fa-bars"></i></div>
+    <ul class="nav-links">
+      <hr>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#certificates">certificates</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#contact">Contact</a></li>
 
-    <hr>
+      <hr>
 
-    <!-- Social icons at bottom of nav -->
+      <!-- Social icons at bottom of nav -->
       <div class="nav-socials">
-    <!-- <a href="#"><i class="fab fa-instagram"></i></a> -->
-    <a href="https://github.com/Lalit-Rajpurohit" target="_blank"><i class="fab fa-github"></i></a>
-    <a href="https://www.linkedin.com/in/lalit-rajpurohit" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-  </div>
-  </ul>
-<!-- <button id="themeToggle" class="theme-btn" aria-label="Toggle dark mode">
+        <!-- <a href="#"><i class="fab fa-instagram"></i></a> -->
+        <a href="https://github.com/Lalit-Rajpurohit" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/lalit-rajpurohit" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </ul>
+    <!-- <button id="themeToggle" class="theme-btn" aria-label="Toggle dark mode">
   <i class="fa-solid fa-moon"></i>
 </button> -->
 
-</nab>
+  </nab>
 
   <div class="wrapper">
     <header>
@@ -201,9 +437,9 @@
         <div class="logo">Lalit Rajpurohit</div>
         <ul>
           <li><a href="#about">About</a></li>
+            <li><a href="#certificates">Certificates</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#experience">Experience</a></li>
-          <li><a href="#certificates">Certificates</a></li>
           <li><a href="#skills">Skills</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
@@ -214,130 +450,220 @@
       <div class="intro">
         <img src="/assets/lalit.png" alt="Your Photo">
         <div class="text">
-          <p>Hi, I'm <strong>Lalit Rajpurohit</strong>, a Cloud & DevOps Engineer with expertise in AWS, Azure, GCP, CI/CD pipelines, Kubernetes, Docker, and Terraform. I build scalable, secure, and automated cloud infrastructures to accelerate development lifecycles.</p>
+          <p>Hi, I'm <strong>Lalit Rajpurohit</strong>, a Cloud & DevOps Engineer with expertise in AWS, Azure, GCP,
+            CI/CD pipelines, Kubernetes, Docker, and Terraform. I build scalable, secure, and automated cloud
+            infrastructures to accelerate development lifecycles.</p>
           <div class="actions">
             <a href="/assets/resume/Lalit_Rajpurohit_CV.pdf" class="btn" download>Download CV</a>
             <div class="socials">
               <a href="https://github.com/Lalit-Rajpurohit" target="_blank"><i class="fab fa-github"></i></a>
-              <a href="https://www.linkedin.com/in/lalit-rajpurohit/" target="_blank"><i class="fab fa-linkedin"></i></a>
+              <a href="https://www.linkedin.com/in/lalit-rajpurohit/" target="_blank"><i
+                  class="fab fa-linkedin"></i></a>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <section id="projects">
-      <h2>Projects</h2>
-      <div class="grid">
-        <a href="https://github.com/Lalit-Rajpurohit/Create-contact-form-using-AWS" class="card" target="_blank"><img src="/assets/project/p5.png" alt="Project One"><h3>AWS Serverless</h3><p>AWS Serverless  Contact Form with Lambda, SES, and Google reCAPTCHA.</p></a>
-        <a href="https://github.com/Lalit-Rajpurohit/AWS-Project---Full-End-to-End-Web-App" class="card" target="_blank"><img src="/assets/project/p3.jpeg" alt="Project Two"><h3>Web App</h3><p> AWS-Project---Full-End-to-End-Web-App.</p></a>
-        <a href="https://github.com/Lalit-Rajpurohit/Movie-Booking-Website" class="card" target="_blank"><img src="/assets/project/p2.png" alt="Project Three"><h3>Movie Website</h3><p>Movie Booking System using Python Django html css js.</p></a>
-        <a href="https://github.com/Lalit-Rajpurohit/Static-website-using-AWS-Amplify-and-Route-53" class="card" target="_blank"><img src="/assets/project/p4.jpeg" alt="Project Three"><h3>Host Static Web</h3><p>Host a Static-website-using-AWS-Amplify-and-Route-53.</p></a>
-        <a href="https://github.com/Lalit-Rajpurohit/AWS-Hosting-a-static-website-using-Amazon-S3-and-AWS-Amplify" class="card" target="_blank"><img src="/assets/project/P1.jpeg" alt="Project Three"><h3>Web App</h3><p>AWS Hosting a static website using Amplify and Amazon-S3.</p></a>
-      </div>
-    </section>
 
     <section id="certificates">
       <h2>Certificates</h2>
+
+      <!-- Gold Certificates Section -->
+      <h3
+        style="color: #D4AF37; font-size: 1.5rem; margin-top: 2rem; margin-bottom: 1rem; border-bottom: 2px solid #D4AF37; display: inline-block; padding-bottom: 0.25rem;">
+        🏆 Gold Certificates</h3>
+      <div class="gold-cert-grid">
+        <div class="cert-item gold-cert-item">
+          <img src="/assets/certificates/gold/Azure-104.png" alt="Azure 104 Cert">
+          <h3>Microsoft Azure Administrator (AZ-104)</h3>
+          <a href="https://learn.microsoft.com/api/credentials/share/en-us/LalitRajpurohit-6031/366C5CBC0B0C9EBE?sharingId=39CE8545F1E6C2CC"
+            target="_blank" class="verify-btn">
+            <i class="fas fa-certificate"></i>Verify Certificate
+          </a>
+        </div>
+      </div>
+
+      <!-- Other Certificates Section -->
+      <h3 style="font-size: 1.3rem; margin-top: 3rem; margin-bottom: 1rem;">Other Certificates</h3>
       <div class="cert-grid">
-        <a href="#certificates" class="cert-item"><img src="/assets/certificates/others/Cloud Essentials Knowledge CC.jpg" alt="Azure Cert"><h3>AWS Cloud Practitioner</h3></a>
-        <a href="#certificates" class="cert-item"><img src="/assets/certificates/others/AWS Foundations CC.jpg" alt="Azure Cert"><h3>AWS Technical Essentials</h3></a>
-        <a href="#certificates" class="cert-item"><img src="/assets/certificates/Main/Hackthon.png" alt="Azure Cert"><h3>OpenAI Hackthon</h3></a>
-        <a href="#certificates" class="cert-item"><img src="/assets/certificates/others/IAM C.jpg" alt="Azure Cert"><h3>AWS IAM</h3></a>
-        <a href="#certificates" class="cert-item"><img src="/assets/certificates/others/PromtIntor-1.jpg" alt="Azure Cert"><h3>Prompt Engineering</h3></a>
-        <a href="#certificates" class="cert-item"><img src="/assets/certificates/others/Amazon CloudFront S.jpg" alt="AWS Cert"><h3>AWS CloudFront</h3></a>
-        <a href="#certificates" class="cert-item"><img src="/assets/certificates/others/AWS Billing and Cost C.jpg" alt="CKA Cert"><h3>AWS Billing and Cost Management</h3></a>
-        <a href="#certificates" class="cert-item"><img src="/assets/certificates/others/AWS Foundations S.jpg" alt="Azure Cert"><h3>AWS Foundations</h3></a>
-        <a href="#certificates" class="cert-item"><img src="/assets/certificates/others/chatgpt for everyone.jpg" alt="Azure Cert"><h3>Chatgpt</h3></a>
-        <a href="#certificates" class="cert-item"><img src="/assets/certificates/others/Cloud Essentials B.jpg" alt="Azure Cert"><h3>Cloud Essentials</h3></a>
-        <a href="#certificates" class="cert-item"><img src="/assets/certificates/others/Cloud Essentials Knowledge B.jpg" alt="Azure Cert"><h3>Cloud Essentials</h3></a>
-        <a href="#certificates" class="cert-item"><img src="/assets/certificates/others/kiro.jpg" alt="Azure Cert"><h3>AWS Kiro</h3></a>
-        <a href="#certificates" class="cert-item"><img src="/assets/certificates/others/Networking Core S-1.jpg" alt="Azure Cert"><h3>AWS Networking</h3></a>
-        <a href="#certificates" class="cert-item"><img src="/assets/certificates/others/Skiro-1.jpg" alt="Azure Cert"><h3>AWS Kiro</h3></a>
-        <a href="#certificates" class="cert-item"><img src="/assets/certificates/others/train-1.jpg" alt="Azure Cert"><h3>AWS Cloud Practitioner</h3></a>
+        <a href="#certificates" class="cert-item"><img
+            src="/assets/certificates/others/Cloud Essentials Knowledge CC.jpg" alt="Azure Cert">
+          <h3>AWS Cloud Practitioner</h3>
+        </a>
+        <a href="#certificates" class="cert-item"><img src="/assets/certificates/others/AWS Foundations CC.jpg"
+            alt="Azure Cert">
+          <h3>AWS Technical Essentials</h3>
+        </a>
+        <a href="#certificates" class="cert-item"><img src="/assets/certificates/Main/Hackthon.png" alt="Azure Cert">
+          <h3>OpenAI Hackthon</h3>
+        </a>
+        <a href="#certificates" class="cert-item"><img src="/assets/certificates/others/IAM C.jpg" alt="Azure Cert">
+          <h3>AWS IAM</h3>
+        </a>
+        <a href="#certificates" class="cert-item"><img src="/assets/certificates/others/PromtIntor-1.jpg"
+            alt="Azure Cert">
+          <h3>Prompt Engineering</h3>
+        </a>
+        <a href="#certificates" class="cert-item"><img src="/assets/certificates/others/Amazon CloudFront S.jpg"
+            alt="AWS Cert">
+          <h3>AWS CloudFront</h3>
+        </a>
+        <a href="#certificates" class="cert-item"><img src="/assets/certificates/others/AWS Billing and Cost C.jpg"
+            alt="CKA Cert">
+          <h3>AWS Billing and Cost Management</h3>
+        </a>
+        <a href="#certificates" class="cert-item"><img src="/assets/certificates/others/AWS Foundations S.jpg"
+            alt="Azure Cert">
+          <h3>AWS Foundations</h3>
+        </a>
+        <a href="#certificates" class="cert-item"><img src="/assets/certificates/others/chatgpt for everyone.jpg"
+            alt="Azure Cert">
+          <h3>Chatgpt</h3>
+        </a>
+        <a href="#certificates" class="cert-item"><img src="/assets/certificates/others/Cloud Essentials B.jpg"
+            alt="Azure Cert">
+          <h3>Cloud Essentials</h3>
+        </a>
+        <a href="#certificates" class="cert-item"><img
+            src="/assets/certificates/others/Cloud Essentials Knowledge B.jpg" alt="Azure Cert">
+          <h3>Cloud Essentials</h3>
+        </a>
+        <a href="#certificates" class="cert-item"><img src="/assets/certificates/others/kiro.jpg" alt="Azure Cert">
+          <h3>AWS Kiro</h3>
+        </a>
+        <a href="#certificates" class="cert-item"><img src="/assets/certificates/others/Networking Core S-1.jpg"
+            alt="Azure Cert">
+          <h3>AWS Networking</h3>
+        </a>
+        <a href="#certificates" class="cert-item"><img src="/assets/certificates/others/Skiro-1.jpg" alt="Azure Cert">
+          <h3>AWS Kiro</h3>
+        </a>
+        <a href="#certificates" class="cert-item"><img src="/assets/certificates/others/train-1.jpg" alt="Azure Cert">
+          <h3>AWS Cloud Practitioner</h3>
+        </a>
       </div>
     </section>
+
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="grid">
+        <a href="https://github.com/Lalit-Rajpurohit/Create-contact-form-using-AWS" class="card" target="_blank"><img
+            src="/assets/project/p5.png" alt="Project One">
+          <h3>AWS Serverless</h3>
+          <p>AWS Serverless Contact Form with Lambda, SES, and Google reCAPTCHA.</p>
+        </a>
+        <a href="https://github.com/Lalit-Rajpurohit/AWS-ECS-Fargate-Containerized-Web-App-with-ALB-Autoscaling"
+          class="card" target="_blank"><img src="/assets/project/awsecs.png" alt="Project TWO">
+          <h3>AWS ECS Fargate</h3>
+          <p>Containerized Web App with ALB & Autoscaling</p>
+        </a>
+        <a href="https://github.com/Lalit-Rajpurohit/AWS-Project---Full-End-to-End-Web-App" class="card"
+          target="_blank"><img src="/assets/project/p3.jpeg" alt="Project Three">
+          <h3>Web App</h3>
+          <p> AWS-Project---Full-End-to-End-Web-App.</p>
+        </a>
+        <a href="https://github.com/Lalit-Rajpurohit/Movie-Booking-Website" class="card" target="_blank"><img
+            src="/assets/project/p2.png" alt="Project four">
+          <h3>Movie Website</h3>
+          <p>Movie Booking System using Python Django html css js.</p>
+        </a>
+        <a href="https://github.com/Lalit-Rajpurohit/Static-website-using-AWS-Amplify-and-Route-53" class="card"
+          target="_blank"><img src="/assets/project/p4.jpeg" alt="Project five">
+          <h3>Host Static Web</h3>
+          <p>Host a Static-website-using-AWS-Amplify-and-Route-53.</p>
+        </a>
+        <a href="https://github.com/Lalit-Rajpurohit/AWS-Hosting-a-static-website-using-Amazon-S3-and-AWS-Amplify"
+          class="card" target="_blank"><img src="/assets/project/P1.jpeg" alt="Project six">
+          <h3>Web App</h3>
+          <p>AWS Hosting a static website using Amplify and Amazon-S3.</p>
+        </a>
+      </div>
+    </section>
+
+
     <section id="skills">
       <h2>Skills</h2>
-      
+
       <div class="card-grid">
         <!-- Web Development Card -->
         <div class="flip-card">
-            <div class="flip-card-inner">
-                <div class="flip-card-front">
-                    <i class="fas fa-laptop-code icon"></i>
-                    <h3>Web Development</h3>
-                </div>
-                <div class="flip-card-back">
-                    <h3>Web Development</h3>
-                    <div class="skills-grid-back">
-                        <div class="skill-item-back">HTML</div>
-                        <div class="skill-item-back">CSS</div>
-                        <div class="skill-item-back">JavaScript</div>
-                        <div class="skill-item-back">React & Next.js</div>
-                        <div class="skill-item-back">TypeScript</div>
-                        <div class="skill-item-back">Node.js</div>
-                        <div class="skill-item-back">Tailwind CSS</div>
-                        <div class="skill-item-back">Python</div>
-                        <div class="skill-item-back">Djanog</div>
-                        <div class="skill-item-back">Flask</div>
-                        <div class="skill-item-back">C++</div>
-                        <div class="skill-item-back">Java</div>
-                    </div>
-                </div>
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <i class="fas fa-laptop-code icon"></i>
+              <h3>Web Development</h3>
             </div>
+            <div class="flip-card-back">
+              <h3>Web Development</h3>
+              <div class="skills-grid-back">
+                <div class="skill-item-back">HTML</div>
+                <div class="skill-item-back">CSS</div>
+                <div class="skill-item-back">JavaScript</div>
+                <div class="skill-item-back">React & Next.js</div>
+                <div class="skill-item-back">TypeScript</div>
+                <div class="skill-item-back">Node.js</div>
+                <div class="skill-item-back">Tailwind CSS</div>
+                <div class="skill-item-back">Python</div>
+                <div class="skill-item-back">Djanog</div>
+                <div class="skill-item-back">Flask</div>
+                <div class="skill-item-back">C++</div>
+                <div class="skill-item-back">Java</div>
+              </div>
+            </div>
+          </div>
         </div>
 
         <!-- Cloud & Infrastructure Card -->
         <div class="flip-card">
-            <div class="flip-card-inner">
-                <div class="flip-card-front">
-                    <i class="fas fa-cloud icon"></i>
-                    <h3>Cloud & Infra</h3>
-                </div>
-                <div class="flip-card-back">
-                    <h3>Cloud & Infra</h3>
-                    <div class="skills-grid-back">
-                        <div class="skill-item-back">AWS</div>
-                        <div class="skill-item-back">GCP</div>
-                        <div class="skill-item-back">Azure</div>
-                        <div class="skill-item-back">IaaS</div>
-                        <div class="skill-item-back">PaaS</div>
-                        <div class="skill-item-back">SaaS</div>
-                        <div class="skill-item-back">Virtualization</div>
-                        <div class="skill-item-back">Networking</div>
-                        <div class="skill-item-back">Hybrid</div>
-                    </div>
-                </div>
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <i class="fas fa-cloud icon"></i>
+              <h3>Cloud & Infra</h3>
             </div>
+            <div class="flip-card-back">
+              <h3>Cloud & Infra</h3>
+              <div class="skills-grid-back">
+                <div class="skill-item-back">AWS</div>
+                <div class="skill-item-back">GCP</div>
+                <div class="skill-item-back">Azure</div>
+                <div class="skill-item-back">IaaS</div>
+                <div class="skill-item-back">PaaS</div>
+                <div class="skill-item-back">SaaS</div>
+                <div class="skill-item-back">Virtualization</div>
+                <div class="skill-item-back">Networking</div>
+                <div class="skill-item-back">Hybrid</div>
+              </div>
+            </div>
+          </div>
         </div>
 
         <!-- DevOps & Automation Card -->
         <div class="flip-card">
-            <div class="flip-card-inner">
-                <div class="flip-card-front">
-                    <i class="fas fa-cogs icon"></i>
-                    <h3>DevOps</h3>
-                </div>
-                <div class="flip-card-back">
-                    <h3>DevOps</h3>
-                    <div class="skills-grid-back">
-                        <div class="skill-item-back">Docker</div>
-                        <div class="skill-item-back">ECS/EKS/AKS/GKE</div>
-                        <div class="skill-item-back">CI/CD</div>
-                        <div class="skill-item-back">GitHub Actions</div>
-                        <div class="skill-item-back">Terraform</div>
-                        <div class="skill-item-back">Kubernetes </div>
-                        <div class="skill-item-back">Ansible</div>
-                        <div class="skill-item-back">Git</div>
-                        <div class="skill-item-back">Automation</div>
-                        <div class="skill-item-back">Monitoring</div>
-                        <div class="skill-item-back">Security</div>
-
-                    </div>
-                </div>
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <i class="fas fa-cogs icon"></i>
+              <h3>DevOps</h3>
             </div>
+            <div class="flip-card-back">
+              <h3>DevOps</h3>
+              <div class="skills-grid-back">
+                <div class="skill-item-back">Docker</div>
+                <div class="skill-item-back">ECS/EKS/AKS/GKE</div>
+                <div class="skill-item-back">CI/CD</div>
+                <div class="skill-item-back">GitHub Actions</div>
+                <div class="skill-item-back">Terraform</div>
+                <div class="skill-item-back">Kubernetes </div>
+                <div class="skill-item-back">Ansible</div>
+                <div class="skill-item-back">Git</div>
+                <div class="skill-item-back">Automation</div>
+                <div class="skill-item-back">Monitoring</div>
+                <div class="skill-item-back">Security</div>
+
+              </div>
+            </div>
+          </div>
         </div>
-    </div>
+      </div>
     </section>
 
     <section id="experience">
@@ -345,8 +671,20 @@
       <div class="list">
         <div class="list-item">
           <h3>Education</h3>
-          <p><em class="a">Bachelors Degree</em> | 2022 - 2025 | Savitribai <a href="https://sppu.digitaluniversity.ac/" style="color: rgb(69, 124, 235);"> Phule Pune University -Pune </a></p><ul><li>Bachelor of Business Administration in Computer Applications.</li><li> -IT consulting, software development, business analytics, digital marketing, and tech-driven entrepreneurship</li>  </ul> <hr>
-         <p><em class="a">Cloud and DevOps Expert Program</em> | 2025 - Present |<a href="https://www.cloudthat.com/" style="color: rgb(69, 124, 235);"> CloudThat </a></p><ul><li>The Cloud and DevOps Expert Program by CloudThat covers <b> AWS, Azure, Linux, and DevOps tools like Docker, Kubernetes, and Terraform Implemented CI/CD with Jenkins & GitLab CI </b>.</li></ul>
+          <p><em class="a">Bachelors Degree</em> | 2022 - 2025 | Savitribai <a href="https://sppu.digitaluniversity.ac/"
+              style="color: rgb(69, 124, 235);"> Phule Pune University -Pune </a></p>
+          <ul>
+            <li>Bachelor of Business Administration in Computer Applications.</li>
+            <li> -IT consulting, software development, business analytics, digital marketing, and tech-driven
+              entrepreneurship</li>
+          </ul>
+          <hr>
+          <p><em class="a">Cloud and DevOps Expert Program</em> | 2025 - Present |<a href="https://www.cloudthat.com/"
+              style="color: rgb(69, 124, 235);"> CloudThat </a></p>
+          <ul>
+            <li>The Cloud and DevOps Expert Program by CloudThat covers <b> AWS, Azure, Linux, and DevOps tools like
+                Docker, Kubernetes, and Terraform Implemented CI/CD with Jenkins & GitLab CI </b>.</li>
+          </ul>
         </div>
         <div class="list-item">
           <h3>Experience</h3>
@@ -379,9 +717,11 @@
         </form>
       </div>
     </section>
-    <footer><p>&copy; 2025 Your Name. All rights reserved.</p></footer>
+    <footer>
+      <p>&copy; 2025 Lalit. All rights reserved.</p>
+    </footer>
   </div>
-  <script>document.querySelectorAll('a[href^="#"]').forEach(anchor=>{anchor.addEventListener('click',function(e){e.preventDefault();document.querySelector(this.getAttribute('href')).scrollIntoView({behavior:'smooth'});});});</script>
+  <script>document.querySelectorAll('a[href^="#"]').forEach(anchor => { anchor.addEventListener('click', function (e) { e.preventDefault(); document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' }); }); });</script>
   <script src="script.js"></script>
 </body>
 
