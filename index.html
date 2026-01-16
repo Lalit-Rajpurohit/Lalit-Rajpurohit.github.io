@@ -340,43 +340,121 @@
       text-align: center;
     }
 
-    /* Gold Certificate Styles */
+    /* Gold Badge Styles */
     .gold-cert-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 350px));
+      display: flex;
+      flex-wrap: wrap;
       gap: 2rem;
-      justify-content: start;
+      justify-content: flex-start;
     }
 
-    .gold-cert-item {
+    .gold-badge {
+      width: 300px;
+      height: 300px;
+      background: linear-gradient(145deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
       position: relative;
-      background: linear-gradient(135deg, #1F3526 0%, #2a4a35 100%);
-      border: 3px solid #D4AF37 !important;
-      box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
-      max-width: 350px;
+      box-shadow:
+        0 0 0 4px #D4AF37,
+        0 0 0 8px rgba(212, 175, 55, 0.3),
+        0 10px 30px rgba(0, 0, 0, 0.4),
+        inset 0 0 30px rgba(212, 175, 55, 0.1);
+      transition: all 0.4s ease;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .gold-badge::before {
+      content: '';
+      position: absolute;
+      top: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 40px;
+      height: 20px;
+      background: linear-gradient(to bottom, #D4AF37, #B8860B);
+      border-radius: 5px 5px 0 0;
+      box-shadow: 0 -2px 5px rgba(212, 175, 55, 0.5);
+    }
+
+    .gold-badge::after {
+      content: '★';
+      position: absolute;
+      top: 15px;
+      font-size: 1.2rem;
+      color: #D4AF37;
+    }
+
+    .gold-badge:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow:
+        0 0 0 4px #D4AF37,
+        0 0 0 8px rgba(212, 175, 55, 0.5),
+        0 20px 40px rgba(0, 0, 0, 0.5),
+        0 0 40px rgba(212, 175, 55, 0.3),
+        inset 0 0 30px rgba(212, 175, 55, 0.2);
+    }
+
+    .gold-badge img {
+      width: 120px;
+      height: 120px;
+      object-fit: contain;
+      margin-bottom: 0.5rem;
+      filter: drop-shadow(0 2px 8px rgba(212, 175, 55, 0.4));
+    }
+
+    .gold-badge h3 {
+      color: #E5C9A2;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      line-height: 1.3;
+      max-width: 200px;
     }
 
     .verify-btn {
       display: inline-block;
-      margin-top: 0.5rem;
-      padding: 0.5rem 1rem;
-      background: #D4AF37;
-      color: #1F3526;
-      border-radius: 0.5rem;
+      padding: 0.4rem 0.8rem;
+      background: linear-gradient(135deg, #D4AF37, #B8860B);
+      color: #1a1a2e;
+      border-radius: 2rem;
       font-weight: bold;
-      font-size: 0.9rem;
+      font-size: 0.75rem;
       transition: all 0.3s ease;
-      border: 2px solid #D4AF37;
+      border: none;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
     }
 
     .verify-btn:hover {
-      background: transparent;
-      color: #D4AF37;
-      transform: scale(1.05);
+      background: linear-gradient(135deg, #FFD700, #D4AF37);
+      transform: scale(1.1);
+      box-shadow: 0 4px 15px rgba(212, 175, 55, 0.5);
     }
 
     .verify-btn i {
       margin-right: 0.3rem;
+    }
+
+    @media (max-width: 768px) {
+      .gold-cert-grid {
+        justify-content: center;
+      }
+
+      .gold-badge {
+        width: 250px;
+        height: 250px;
+      }
+
+      .gold-badge img {
+        width: 100px;
+        height: 100px;
+      }
     }
   </style>
 
@@ -437,7 +515,7 @@
         <div class="logo">Lalit Rajpurohit</div>
         <ul>
           <li><a href="#about">About</a></li>
-            <li><a href="#certificates">Certificates</a></li>
+          <li><a href="#certificates">Certificates</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#experience">Experience</a></li>
           <li><a href="#skills">Skills</a></li>
@@ -454,7 +532,7 @@
             CI/CD pipelines, Kubernetes, Docker, and Terraform. I build scalable, secure, and automated cloud
             infrastructures to accelerate development lifecycles.</p>
           <div class="actions">
-            <a href="/assets/resume/Lalit_Rajpurohit_CV.pdf" class="btn" download>Download CV</a>
+            <a href="/assets/resume/Lalit_Rajpurohit_Resume.pdf" class="btn" download>Download CV</a>
             <div class="socials">
               <a href="https://github.com/Lalit-Rajpurohit" target="_blank"><i class="fab fa-github"></i></a>
               <a href="https://www.linkedin.com/in/lalit-rajpurohit/" target="_blank"><i
@@ -471,14 +549,26 @@
       <!-- Gold Certificates Section -->
       <h3
         style="color: #D4AF37; font-size: 1.5rem; margin-top: 2rem; margin-bottom: 1rem; border-bottom: 2px solid #D4AF37; display: inline-block; padding-bottom: 0.25rem;">
-        🏆 Gold Certificates</h3>
+        🏆 Badges</h3>
       <div class="gold-cert-grid">
-        <div class="cert-item gold-cert-item">
-          <img src="/assets/certificates/gold/Azure-104.png" alt="Azure 104 Cert">
+
+        <!-- AWS Badge -->
+        <div class="gold-badge">
+          <img src="/assets/badges/aws-certified-solutions-architect-associate-badge.png" alt="AWS SAA-C03 Cert">
+          <h3>AWS Solutions Architect – Associate</h3>
+          <a href="https://www.credly.com/badges/9b0ff146-b7a3-46fb-b035-1557b7f22a87/public_url" target="_blank"
+            class="verify-btn">
+            <i class="fas fa-certificate"></i> Verify
+          </a>
+        </div>
+
+        <!-- Azure Badge -->
+        <div class="gold-badge">
+          <img src="/assets/badges/microsoft-certified-associate-badge-az.png" alt="Azure 104 Cert">
           <h3>Microsoft Azure Administrator (AZ-104)</h3>
           <a href="https://learn.microsoft.com/api/credentials/share/en-us/LalitRajpurohit-6031/366C5CBC0B0C9EBE?sharingId=39CE8545F1E6C2CC"
             target="_blank" class="verify-btn">
-            <i class="fas fa-certificate"></i>Verify Certificate
+            <i class="fas fa-certificate"></i> Verify
           </a>
         </div>
       </div>
@@ -494,21 +584,24 @@
             alt="Azure Cert">
           <h3>AWS Technical Essentials</h3>
         </a>
-        <a href="#certificates" class="cert-item"><img src="/assets/certificates/Main/Hackthon.png" alt="Azure Cert">
+        <a href="#certificates" class="cert-item"><img src="/assets/certificates/others/train-1.jpg" alt="Azure Cert">
+          <h3>AWS Cloud Practitioner</h3>
+        </a>
+        <!-- <a href="#certificates" class="cert-item"><img src="/assets/certificates/Main/Hackthon.png" alt="Azure Cert">
           <h3>OpenAI Hackthon</h3>
         </a>
         <a href="#certificates" class="cert-item"><img src="/assets/certificates/others/IAM C.jpg" alt="Azure Cert">
           <h3>AWS IAM</h3>
-        </a>
-        <a href="#certificates" class="cert-item"><img src="/assets/certificates/others/PromtIntor-1.jpg"
+        </a> -->
+        <!-- <a href="#certificates" class="cert-item"><img src="/assets/certificates/others/PromtIntor-1.jpg"
             alt="Azure Cert">
           <h3>Prompt Engineering</h3>
         </a>
         <a href="#certificates" class="cert-item"><img src="/assets/certificates/others/Amazon CloudFront S.jpg"
             alt="AWS Cert">
           <h3>AWS CloudFront</h3>
-        </a>
-        <a href="#certificates" class="cert-item"><img src="/assets/certificates/others/AWS Billing and Cost C.jpg"
+        </a> -->
+        <!-- <a href="#certificates" class="cert-item"><img src="/assets/certificates/others/AWS Billing and Cost C.jpg"
             alt="CKA Cert">
           <h3>AWS Billing and Cost Management</h3>
         </a>
@@ -519,8 +612,8 @@
         <a href="#certificates" class="cert-item"><img src="/assets/certificates/others/chatgpt for everyone.jpg"
             alt="Azure Cert">
           <h3>Chatgpt</h3>
-        </a>
-        <a href="#certificates" class="cert-item"><img src="/assets/certificates/others/Cloud Essentials B.jpg"
+        </a> -->
+        <!-- <a href="#certificates" class="cert-item"><img src="/assets/certificates/others/Cloud Essentials B.jpg"
             alt="Azure Cert">
           <h3>Cloud Essentials</h3>
         </a>
@@ -530,17 +623,15 @@
         </a>
         <a href="#certificates" class="cert-item"><img src="/assets/certificates/others/kiro.jpg" alt="Azure Cert">
           <h3>AWS Kiro</h3>
-        </a>
-        <a href="#certificates" class="cert-item"><img src="/assets/certificates/others/Networking Core S-1.jpg"
+        </a> -->
+        <!-- <a href="#certificates" class="cert-item"><img src="/assets/certificates/others/Networking Core S-1.jpg"
             alt="Azure Cert">
           <h3>AWS Networking</h3>
         </a>
         <a href="#certificates" class="cert-item"><img src="/assets/certificates/others/Skiro-1.jpg" alt="Azure Cert">
           <h3>AWS Kiro</h3>
-        </a>
-        <a href="#certificates" class="cert-item"><img src="/assets/certificates/others/train-1.jpg" alt="Azure Cert">
-          <h3>AWS Cloud Practitioner</h3>
-        </a>
+        </a> -->
+
       </div>
     </section>
 
@@ -551,7 +642,8 @@
         <a href="https://github.com/Lalit-Rajpurohit/aws-3-tier-architecture" class="card" target="_blank"><img
             src="/assets/project/3tarchitecture-diagram.png" alt="Project One">
           <h3>3-Tier Web Architecture</h3>
-          <p>It leverages a highly available, fault-tolerant architecture using Amazon EC2 Auto Scaling, Application Load Balancer, and Amazon RDS Multi-AZ.</p>
+          <p>It leverages a highly available, fault-tolerant architecture using Amazon EC2 Auto Scaling, Application
+            Load Balancer, and Amazon RDS Multi-AZ.</p>
         </a>
         <a href="https://github.com/Lalit-Rajpurohit/Create-contact-form-using-AWS" class="card" target="_blank"><img
             src="/assets/project/p5.png" alt="Project One">
