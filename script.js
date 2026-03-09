@@ -15,16 +15,16 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-/* ---------- AUTO-CLOSE NAV ON SCROLL (mobile & tablet) ---------- */
+/* ---------- AUTO-CLOSE NAV ON SCROLL ---------- */
 
 let scrollTimer;
 window.addEventListener('scroll', () => {
   clearTimeout(scrollTimer);
   scrollTimer = setTimeout(() => {
-    if (window.innerWidth <= 768) {
+    if (window.innerWidth <= 1510) {
       navLinks.classList.remove('active');
     }
-  }, 10);   // 100 ms after the last scroll event
+  }, 10);
 });
 
 
@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   form.addEventListener('submit', async function (e) {
     e.preventDefault(); // ✅ Prevent page refresh
-console.log("test");
+    console.log("test");
     const data = {
       name: form.name.value,
       email: form.email.value,
