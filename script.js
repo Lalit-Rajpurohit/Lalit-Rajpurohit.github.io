@@ -1,65 +1,100 @@
-/* ---------- MOBILE NAV TOGGLE ---------- */
-const navToggle = document.querySelector('.nav-toggle');
-const navLinks = document.querySelector('.nav-links');
+/* ========================================
+   PORTFOLIO SCRIPTS - Lalit Rajpurohit
+   ========================================
 
-navToggle.onclick = () => navLinks.classList.toggle('active');
+   Table of Contents:
+   1. Mobile Navigation Toggle
+   2. Smooth Scroll
+   3. Auto-close Nav on Scroll
+   4. Contact Form Handler
+======================================== */
 
-/* ---------- SMOOTH SCROLL ---------- */
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', e => {
-    e.preventDefault();
-    navLinks.classList.remove('active');
-    document.querySelector(anchor.getAttribute('href')).scrollIntoView({
-      behavior: 'smooth'
+document.addEventListener('DOMContentLoaded', function() {
+
+  /* ========================================
+     1. MOBILE NAVIGATION TOGGLE
+  ======================================== */
+  const navToggle = document.querySelector('.nav-toggle');
+  const navLinks = document.querySelector('.nav-links');
+
+  if (navToggle && navLinks) {
+    navToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  }
+
+  /* ========================================
+     2. SMOOTH SCROLL
+  ======================================== */
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+
+      // Close mobile nav if open
+      if (navLinks) {
+        navLinks.classList.remove('active');
+      }
+
+      // Smooth scroll to target
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({
+          behavior: 'smooth'
+        });
+      }
     });
   });
-});
 
-/* ---------- AUTO-CLOSE NAV ON SCROLL ---------- */
-
-let scrollTimer;
-window.addEventListener('scroll', () => {
-  clearTimeout(scrollTimer);
-  scrollTimer = setTimeout(() => {
-    if (window.innerWidth <= 1510) {
-      navLinks.classList.remove('active');
-    }
-  }, 10);
-});
-
-
-// contact form 
-
-document.addEventListener('DOMContentLoaded', function () {
-  const form = document.getElementById('contactsform');
-
-  form.addEventListener('submit', async function (e) {
-    e.preventDefault(); // ✅ Prevent page refresh
-    console.log("test");
-    const data = {
-      name: form.name.value,
-      email: form.email.value,
-      sub: form.subject.value,
-      message: form.message.value
-    };
-
-    try {
-      const response = await fetch('https://0w2rgqkyac.execute-api.ap-south-1.amazonaws.com/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data)
-      });
-
-      const result = await response.json();
-
-      if (response.ok) {
-        form.reset(); // ✅ Clear the form
-        alert('✅ Message sent successfully! \n I will reach out to you via email from my address rajpurohitlalit181@gmail.com. \n Please check your spam folder if you do not see it in your inbox');
-      } else {
-        alert('❌ Failed to send message: ' + result.message);
+  /* ========================================
+     3. AUTO-CLOSE NAV ON SCROLL
+  ======================================== */
+  let scrollTimer;
+  window.addEventListener('scroll', () => {
+    clearTimeout(scrollTimer);
+    scrollTimer = setTimeout(() => {
+      if (window.innerWidth <= 1510 && navLinks) {
+        navLinks.classList.remove('active');
       }
-    } catch (error) {
-      alert('❌ Error: ' + error.message);
-    }
+    }, 10);
   });
+
+  /* ========================================
+     4. CONTACT FORM HANDLER
+  ======================================== */
+  const contactForm = document.getElementById('contactsform');
+
+  if (contactForm) {
+    contactForm.addEventListener('submit', async function(e) {
+      e.preventDefault();
+
+      const formData = {
+        name: this.name.value,
+        email: this.email.value,
+        sub: this.subject.value,
+        message: this.message.value
+      };
+
+      try {
+        const response = await fetch('https://0w2rgqkyac.execute-api.ap-south-1.amazonaws.com/contact', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(formData)
+        });
+
+        const result = await response.json();
+
+        if (response.ok) {
+          this.reset();
+          alert('Message sent successfully!\nI will reach out to you via email from rajpurohitlalit181@gmail.com.\nPlease check your spam folder if you do not see it in your inbox.');
+        } else {
+          alert('Failed to send message: ' + result.message);
+        }
+      } catch (error) {
+        alert('Error: ' + error.message);
+      }
+    });
+  }
+
 });
