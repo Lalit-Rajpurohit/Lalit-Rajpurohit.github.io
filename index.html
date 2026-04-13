@@ -7,8 +7,35 @@
   <meta name="description" content="Lalit Rajpurohit - Cloud & DevOps Engineer, Spring Boot Developer, and AI Integration Specialist. Expert in AWS, Azure, Kubernetes, Docker, Terraform, and AI/ML technologies.">
   <meta name="keywords" content="Cloud Engineer, DevOps, AWS, Azure, Kubernetes, Docker, Terraform, Spring Boot, AI, Machine Learning">
   <meta name="author" content="Lalit Rajpurohit">
+  <meta name="theme-color" content="#1F3526">
+
+  <!-- Theme init (inline to avoid FOUC) -->
+  <script>
+    (function () {
+      try {
+        var stored = localStorage.getItem('theme');
+        var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        var theme = stored || (prefersDark ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {}
+    })();
+  </script>
 
   <title>Lalit Rajpurohit | Cloud & DevOps Engineer | AI Integration Specialist</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/lalit.png">
+  <link rel="apple-touch-icon" href="assets/lalit.png">
+
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Lalit Rajpurohit | Cloud & DevOps Engineer">
+  <meta property="og:description" content="Cloud & DevOps Engineer · Spring Boot Developer · AI Integration Specialist. AWS, Azure, Kubernetes, Terraform.">
+  <meta property="og:image" content="assets/lalit.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Lalit Rajpurohit | Cloud & DevOps Engineer">
+  <meta name="twitter:description" content="Cloud & DevOps Engineer · Spring Boot Developer · AI Integration Specialist.">
+  <meta name="twitter:image" content="assets/lalit.png">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,46 +47,77 @@
 
   <!-- Main Stylesheet -->
   <link rel="stylesheet" href="style.css">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Lalit Rajpurohit",
+    "jobTitle": "Cloud & DevOps Engineer",
+    "description": "Cloud & DevOps Engineer, Spring Boot Developer, and AI Integration Specialist.",
+    "image": "assets/lalit.png",
+    "email": "mailto:rajpurohitlalit181@gmail.com",
+    "url": "https://github.com/Lalit-Rajpurohit",
+    "sameAs": [
+      "https://github.com/Lalit-Rajpurohit",
+      "https://www.linkedin.com/in/lalit-rajpurohit/"
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Pune",
+      "addressCountry": "IN"
+    },
+    "knowsAbout": ["AWS", "Azure", "Kubernetes", "Docker", "Terraform", "Spring Boot", "LLM", "DevOps"]
+  }
+  </script>
 </head>
 
 <body>
 
+  <!-- Skip link for accessibility -->
+  <a href="#about" class="skip-link">Skip to main content</a>
+
   <!-- ========================================
        FLOATING SIDE NAVIGATION
   ======================================== -->
-  <nav id="navbar" class="nav float-card">
+  <nav id="navbar" class="nav float-card" aria-label="Primary">
     <!-- Mini Profile -->
     <div class="mini-profile">
-      <img src="assets/lalit.png" alt="Lalit Rajpurohit">
+      <img src="assets/lalit.webp" alt="" width="46" height="46">
       <span>Lalit</span>
     </div>
 
+    <!-- Theme toggle -->
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" type="button">
+      <i class="fa-solid fa-moon theme-icon-dark" aria-hidden="true"></i>
+      <i class="fa-solid fa-sun theme-icon-light" aria-hidden="true"></i>
+    </button>
+
     <!-- Mobile Toggle -->
-    <div class="nav-toggle">
-      <i class="fa-solid fa-bars"></i>
-    </div>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-menu">
+      <i class="fa-solid fa-bars" aria-hidden="true"></i>
+    </button>
 
-    <!-- Navigation Links -->
-    <ul class="nav-links">
-      <hr>
-      <li><a href="#about">About</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#certificates">Certificates</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#contact">Contact</a></li>
-      <hr>
-
-      <!-- Social Icons -->
+    <!-- Drawer (links + socials) -->
+    <div id="nav-menu" class="nav-menu">
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#certificates">Certificates</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
       <div class="nav-socials">
-        <a href="https://github.com/Lalit-Rajpurohit" target="_blank" aria-label="GitHub">
-          <i class="fab fa-github"></i>
+        <a href="https://github.com/Lalit-Rajpurohit" target="_blank" rel="noopener" aria-label="GitHub">
+          <i class="fab fa-github" aria-hidden="true"></i>
         </a>
-        <a href="https://www.linkedin.com/in/lalit-rajpurohit" target="_blank" aria-label="LinkedIn">
-          <i class="fab fa-linkedin-in"></i>
+        <a href="https://www.linkedin.com/in/lalit-rajpurohit" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <i class="fab fa-linkedin-in" aria-hidden="true"></i>
         </a>
       </div>
-    </ul>
+    </div>
   </nav>
 
   <!-- ========================================
@@ -67,56 +125,58 @@
   ======================================== -->
   <div class="wrapper">
 
-    <!-- Header -->
-    <header>
-      <nav>
-        <div class="logo">Lalit Rajpurohit</div>
-        <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#certificates">Certificates</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
+    <main>
 
     <!-- ========================================
-         ABOUT SECTION
+         HERO / ABOUT SECTION
     ======================================== -->
-    <section id="about">
-      <h2>About Me</h2>
-      <div class="intro">
-        <img src="assets/lalit.png" alt="Lalit Rajpurohit">
-        <div class="text">
-          <p>
-            Hi, I'm <strong>Lalit Rajpurohit, a Cloud & DevOps Engineer | Spring Boot Developer | AI Integration Specialist</strong>
-            with expertise in AWS, Azure, and modern DevOps practices including CI/CD, Kubernetes, Docker, and Terraform.
-            I design and deploy scalable, secure, and automated cloud infrastructures to accelerate development lifecycles.
+    <section id="about" class="hero">
+      <div class="hero-content">
+        <img src="assets/lalit.webp" alt="Portrait of Lalit Rajpurohit" width="200" height="200" class="hero-img">
+        <div class="hero-text">
+          <p class="hero-greeting">Hi, I'm</p>
+          <h1>Lalit Rajpurohit</h1>
+          <p class="hero-role">Cloud &amp; DevOps Engineer · Spring Boot Developer · AI Integration Specialist</p>
+          <p class="hero-bio">
+            I design scalable, secure cloud infrastructure on AWS &amp; Azure, build backend systems
+            with Java/Spring Boot, and integrate LLMs into real-world automation workflows.
           </p>
-          <p>
-            I also build backend systems using Java and Spring Boot, developing secure REST APIs and cloud-native
-            applications that integrate seamlessly with modern DevOps workflows and containerized environments.
-          </p>
-          <p>
-            I also leverage AI and LLM technologies to build intelligent automation workflows, AI-powered agents,
-            and enhance development productivity with modern AI coding tools. I have hands-on experience integrating
-            LLM APIs (OpenAI, Claude), building AI agents with n8n and LangChain, and using AI coding tools like
-            GitHub Copilot and Claude Code.
-          </p>
-          <div class="actions">
-            <a href="assets/resume/lalit-resume-cv.pdf" class="btn" download>Download CV</a>
-            <div class="socials">
-              <a href="https://github.com/Lalit-Rajpurohit" target="_blank" aria-label="GitHub">
-                <i class="fab fa-github"></i>
-              </a>
-              <a href="https://www.linkedin.com/in/lalit-rajpurohit/" target="_blank" aria-label="LinkedIn">
-                <i class="fab fa-linkedin"></i>
-              </a>
-            </div>
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-primary">View Projects</a>
+            <a href="assets/resume/lalit-resume-cv.pdf" class="btn btn-outline" download>Download CV</a>
+          </div>
+          <div class="socials hero-socials">
+            <a href="https://github.com/Lalit-Rajpurohit" target="_blank" rel="noopener" aria-label="GitHub">
+              <i class="fab fa-github" aria-hidden="true"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/lalit-rajpurohit/" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <i class="fab fa-linkedin" aria-hidden="true"></i>
+            </a>
           </div>
         </div>
+      </div>
+
+      <div class="about-more">
+        <article class="feature-card">
+          <div class="feature-icon"><i class="fas fa-cloud" aria-hidden="true"></i></div>
+          <h3>Cloud &amp; DevOps</h3>
+          <p>Scalable, automated cloud infrastructure on AWS &amp; Azure with CI/CD, Kubernetes, Docker, and Terraform.</p>
+        </article>
+        <article class="feature-card">
+          <div class="feature-icon"><i class="fas fa-server" aria-hidden="true"></i></div>
+          <h3>Backend Engineering</h3>
+          <p>Secure REST APIs and cloud-native applications with Java &amp; Spring Boot, built for containerized workflows.</p>
+        </article>
+        <article class="feature-card">
+          <div class="feature-icon"><i class="fas fa-robot" aria-hidden="true"></i></div>
+          <h3>AI Integration</h3>
+          <p>LLM-powered agents and automation with OpenAI, Claude, n8n, LangChain — plus AI coding tools like Claude Code.</p>
+        </article>
+        <article class="feature-card">
+          <div class="feature-icon"><i class="fas fa-code" aria-hidden="true"></i></div>
+          <h3>Web Development</h3>
+          <p>Responsive websites and full-stack web apps with React, Next.js, Node.js, and modern CSS — from landing pages to production platforms.</p>
+        </article>
       </div>
     </section>
 
@@ -124,28 +184,27 @@
          CERTIFICATES SECTION
     ======================================== -->
     <section id="certificates">
-      <h2>Certificates</h2>
+      <h2>Certifications</h2>
+      <p class="section-lede">Industry certifications validating my cloud expertise.</p>
 
-      <!-- Gold Badges -->
-      <h3 class="badges-title">Badges</h3>
-      <div class="gold-cert-grid">
-        <!-- AWS Badge -->
-        <div class="gold-badge">
-          <img src="assets/badges/aws-certified-solutions-architect-associate-badge.png" alt="AWS Solutions Architect Associate Certification">
-          <h3>AWS Solutions Architect – Associate</h3>
-          <a href="https://www.credly.com/badges/9b0ff146-b7a3-46fb-b035-1557b7f22a87/public_url" target="_blank" class="verify-btn">
-            <i class="fas fa-certificate"></i> Verify
-          </a>
-        </div>
+      <div class="badge-row">
+        <a href="https://www.credly.com/badges/9b0ff146-b7a3-46fb-b035-1557b7f22a87/public_url" target="_blank" rel="noopener" class="badge-item">
+          <img src="assets/badges/aws-certified-solutions-architect-associate-badge.webp" alt="AWS Solutions Architect Associate badge" loading="lazy" width="160" height="160">
+          <span class="badge-title">AWS Solutions Architect – Associate</span>
+          <span class="badge-issuer">Amazon Web Services</span>
+          <span class="badge-verify">
+            Verify <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>
+          </span>
+        </a>
 
-        <!-- Azure Badge -->
-        <div class="gold-badge">
-          <img src="assets/badges/microsoft-certified-associate-badge-az.png" alt="Microsoft Azure Administrator Certification">
-          <h3>Microsoft Azure Administrator (AZ-104)</h3>
-          <a href="https://learn.microsoft.com/api/credentials/share/en-us/LalitRajpurohit-6031/366C5CBC0B0C9EBE?sharingId=39CE8545F1E6C2CC" target="_blank" class="verify-btn">
-            <i class="fas fa-certificate"></i> Verify
-          </a>
-        </div>
+        <a href="https://learn.microsoft.com/api/credentials/share/en-us/LalitRajpurohit-6031/366C5CBC0B0C9EBE?sharingId=39CE8545F1E6C2CC" target="_blank" rel="noopener" class="badge-item">
+          <img src="assets/badges/microsoft-certified-associate-badge-az.webp" alt="Microsoft Azure Administrator badge" loading="lazy" width="160" height="160">
+          <span class="badge-title">Microsoft Azure Administrator (AZ-104)</span>
+          <span class="badge-issuer">Microsoft</span>
+          <span class="badge-verify">
+            Verify <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>
+          </span>
+        </a>
       </div>
     </section>
 
@@ -154,91 +213,267 @@
     ======================================== -->
     <section id="projects">
       <h2>Projects</h2>
-      <div class="grid">
+
+      <div class="grid project-grid">
+
         <!-- AI Tools Discovery Agent -->
-        <a href="https://github.com/Lalit-Rajpurohit/AI-Tools-Discovery-Agent.git" class="card" target="_blank">
-          <img src="assets/project/ai-agent.png" alt="AI Tools Discovery Agent">
-          <h3>AI Tools Discovery Agent</h3>
-          <p>A local-first tool (n8n + Docker + OpenRouter) that finds AI tools on GitHub, summarizes them with an LLM, and sends daily digests...</p>
-        </a>
+        <article class="project-card" data-category="ai">
+          <div class="project-img-wrap">
+            <img src="assets/project/ai-agent.webp" alt="AI Tools Discovery Agent" loading="lazy" width="400" height="240">
+          </div>
+          <div class="project-body">
+            <h3>AI Tools Discovery Agent</h3>
+            <p>Local-first tool (n8n + Docker + OpenRouter) that finds AI tools on GitHub, summarizes them with an LLM, and sends daily digests.</p>
+            <div class="project-tech">
+              <span class="tech-chip">n8n</span>
+              <span class="tech-chip">Docker</span>
+              <span class="tech-chip">OpenRouter</span>
+              <span class="tech-chip">LLM</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://github.com/Lalit-Rajpurohit/AI-Tools-Discovery-Agent.git" target="_blank" rel="noopener" class="project-link">
+                <i class="fab fa-github" aria-hidden="true"></i> Code
+              </a>
+            </div>
+          </div>
+        </article>
 
         <!-- 3-Tier Architecture -->
-        <a href="https://github.com/Lalit-Rajpurohit/aws-3-tier-architecture" class="card" target="_blank">
-          <img src="assets/project/3tarchitecture-diagram.png" alt="3-Tier Web Architecture Diagram">
-          <h3>3-Tier Web Architecture</h3>
-          <p>Highly available architecture using EC2 Auto Scaling, Application Load Balancer, and RDS Multi-AZ...</p>
-        </a>
+        <article class="project-card" data-category="cloud">
+          <div class="project-img-wrap">
+            <img src="assets/project/3tarchitecture-diagram.webp" alt="3-Tier Web Architecture Diagram" loading="lazy" width="400" height="240">
+          </div>
+          <div class="project-body">
+            <h3>3-Tier Web Architecture</h3>
+            <p>Highly available architecture using EC2 Auto Scaling, Application Load Balancer, and RDS Multi-AZ.</p>
+            <div class="project-tech">
+              <span class="tech-chip">AWS</span>
+              <span class="tech-chip">EC2</span>
+              <span class="tech-chip">ALB</span>
+              <span class="tech-chip">RDS</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://github.com/Lalit-Rajpurohit/aws-3-tier-architecture" target="_blank" rel="noopener" class="project-link">
+                <i class="fab fa-github" aria-hidden="true"></i> Code
+              </a>
+            </div>
+          </div>
+        </article>
 
         <!-- E2EE Chat App -->
-        <a href="https://github.com/Lalit-Rajpurohit/E2EE-Chat-Application" class="card" target="_blank">
-          <img src="assets/project/E2EE_chat.png" alt="Encrypted Chat App">
-          <h3>Encrypted Chat App</h3>
-          <p>Real-time chat app using Spring Boot, React, and WebSocket with AES end-to-end encryption...</p>
-        </a>
+        <article class="project-card" data-category="fullstack">
+          <div class="project-img-wrap">
+            <img src="assets/project/E2EE_chat.webp" alt="Encrypted Chat App" loading="lazy" width="400" height="240">
+          </div>
+          <div class="project-body">
+            <h3>Encrypted Chat App</h3>
+            <p>Real-time chat app using Spring Boot, React, and WebSocket with AES end-to-end encryption.</p>
+            <div class="project-tech">
+              <span class="tech-chip">Spring Boot</span>
+              <span class="tech-chip">React</span>
+              <span class="tech-chip">WebSocket</span>
+              <span class="tech-chip">AES</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://github.com/Lalit-Rajpurohit/E2EE-Chat-Application" target="_blank" rel="noopener" class="project-link">
+                <i class="fab fa-github" aria-hidden="true"></i> Code
+              </a>
+            </div>
+          </div>
+        </article>
 
         <!-- Vilo Store -->
-        <a href="https://vilo-store.com" class="card" target="_blank">
-          <img src="assets/project/vilo-store.png" alt="Vilo Store Project">
-          <h3>Vilo Store (Live Internship)</h3>
-          <p>Developed and deployed a grocery delivery platform for small cities on production cloud environment...</p>
-        </a>
+        <article class="project-card" data-category="fullstack cloud">
+          <div class="project-img-wrap">
+            <img src="assets/project/vilo-store.webp" alt="Vilo Store Project" loading="lazy" width="400" height="240">
+            <span class="project-badge">Live</span>
+          </div>
+          <div class="project-body">
+            <h3>Vilo Store <small>(Live Internship)</small></h3>
+            <p>Grocery delivery platform for small cities — developed and deployed on production cloud infrastructure.</p>
+            <div class="project-tech">
+              <span class="tech-chip">Full-Stack</span>
+              <span class="tech-chip">Cloud</span>
+              <span class="tech-chip">Production</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://vilo-store.com" target="_blank" rel="noopener" class="project-link project-link-demo">
+                <i class="fas fa-external-link-alt" aria-hidden="true"></i> Live Demo
+              </a>
+            </div>
+          </div>
+        </article>
 
         <!-- AI System Design Generator -->
-        <a href="https://github.com/Lalit-Rajpurohit/AI-System-Design-Generator" class="card" target="_blank">
-          <img src="assets/project/aisysgen.png" alt="AI Architect System Design Generator">
-          <h3>AI Architect – System Design Generator</h3>
-          <p>An AI-powered platform that converts natural language requirements into scalable system architectures and diagrams...</p>
-        </a>
+        <article class="project-card" data-category="ai">
+          <div class="project-img-wrap">
+            <img src="assets/project/aisysgen.webp" alt="AI Architect System Design Generator" loading="lazy" width="400" height="240">
+          </div>
+          <div class="project-body">
+            <h3>AI Architect – System Design Generator</h3>
+            <p>AI-powered platform that converts natural-language requirements into scalable system architectures and diagrams.</p>
+            <div class="project-tech">
+              <span class="tech-chip">LLM</span>
+              <span class="tech-chip">System Design</span>
+              <span class="tech-chip">Diagrams</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://github.com/Lalit-Rajpurohit/AI-System-Design-Generator" target="_blank" rel="noopener" class="project-link">
+                <i class="fab fa-github" aria-hidden="true"></i> Code
+              </a>
+            </div>
+          </div>
+        </article>
 
         <!-- CloudCost -->
-        <a href="https://github.com/Lalit-Rajpurohit/CloudCost.git" class="card" target="_blank">
-          <img src="assets/project/cloudmonitor.png" alt="CloudCost AWS Cost Monitor">
-          <h3>CloudCost - AWS Cost Monitor</h3>
-          <p>Spring Boot tool that monitors AWS spending using Cost Explorer API with automated tracking...</p>
-        </a>
+        <article class="project-card" data-category="cloud">
+          <div class="project-img-wrap">
+            <img src="assets/project/cloudmonitor.webp" alt="CloudCost AWS Cost Monitor" loading="lazy" width="400" height="240">
+          </div>
+          <div class="project-body">
+            <h3>CloudCost – AWS Cost Monitor</h3>
+            <p>Spring Boot tool that monitors AWS spending using the Cost Explorer API with automated tracking.</p>
+            <div class="project-tech">
+              <span class="tech-chip">Spring Boot</span>
+              <span class="tech-chip">AWS</span>
+              <span class="tech-chip">Cost Explorer</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://github.com/Lalit-Rajpurohit/CloudCost.git" target="_blank" rel="noopener" class="project-link">
+                <i class="fab fa-github" aria-hidden="true"></i> Code
+              </a>
+            </div>
+          </div>
+        </article>
 
         <!-- Banking System -->
-        <a href="https://github.com/Lalit-Rajpurohit/Banking-System" class="card" target="_blank">
-          <img src="assets/project/banking.png" alt="Spring Boot Banking System">
-          <h3>Banking System</h3>
-          <p>Full-stack banking app with Spring Boot and React supporting accounts, transactions, and REST APIs...</p>
-        </a>
+        <article class="project-card" data-category="fullstack">
+          <div class="project-img-wrap">
+            <img src="assets/project/banking.webp" alt="Spring Boot Banking System" loading="lazy" width="400" height="240">
+          </div>
+          <div class="project-body">
+            <h3>Banking System</h3>
+            <p>Full-stack banking app with Spring Boot and React supporting accounts, transactions, and REST APIs.</p>
+            <div class="project-tech">
+              <span class="tech-chip">Spring Boot</span>
+              <span class="tech-chip">React</span>
+              <span class="tech-chip">REST</span>
+              <span class="tech-chip">MySQL</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://github.com/Lalit-Rajpurohit/Banking-System" target="_blank" rel="noopener" class="project-link">
+                <i class="fab fa-github" aria-hidden="true"></i> Code
+              </a>
+            </div>
+          </div>
+        </article>
 
         <!-- AWS Serverless -->
-        <a href="https://github.com/Lalit-Rajpurohit/Create-contact-form-using-AWS" class="card" target="_blank">
-          <img src="assets/project/p5.png" alt="AWS Serverless Contact Form">
-          <h3>AWS Serverless</h3>
-          <p>AWS Serverless Contact Form with Lambda, SES, and Google reCAPTCHA.</p>
-        </a>
+        <article class="project-card" data-category="cloud">
+          <div class="project-img-wrap">
+            <img src="assets/project/p5.webp" alt="AWS Serverless Contact Form" loading="lazy" width="400" height="240">
+          </div>
+          <div class="project-body">
+            <h3>AWS Serverless Contact Form</h3>
+            <p>Serverless contact form built with Lambda, SES, and Google reCAPTCHA.</p>
+            <div class="project-tech">
+              <span class="tech-chip">Lambda</span>
+              <span class="tech-chip">SES</span>
+              <span class="tech-chip">reCAPTCHA</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://github.com/Lalit-Rajpurohit/Create-contact-form-using-AWS" target="_blank" rel="noopener" class="project-link">
+                <i class="fab fa-github" aria-hidden="true"></i> Code
+              </a>
+            </div>
+          </div>
+        </article>
 
         <!-- AWS ECS Fargate -->
-        <a href="https://github.com/Lalit-Rajpurohit/AWS-ECS-Fargate-Containerized-Web-App-with-ALB-Autoscaling" class="card" target="_blank">
-          <img src="assets/project/awsecs.png" alt="AWS ECS Fargate Architecture">
-          <h3>AWS ECS Fargate</h3>
-          <p>Containerized Web App with ALB & Autoscaling</p>
-        </a>
+        <article class="project-card" data-category="cloud">
+          <div class="project-img-wrap">
+            <img src="assets/project/awsecs.webp" alt="AWS ECS Fargate Architecture" loading="lazy" width="400" height="240">
+          </div>
+          <div class="project-body">
+            <h3>AWS ECS Fargate</h3>
+            <p>Containerized web app running on ECS Fargate with Application Load Balancer and autoscaling.</p>
+            <div class="project-tech">
+              <span class="tech-chip">ECS</span>
+              <span class="tech-chip">Fargate</span>
+              <span class="tech-chip">ALB</span>
+              <span class="tech-chip">Autoscaling</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://github.com/Lalit-Rajpurohit/AWS-ECS-Fargate-Containerized-Web-App-with-ALB-Autoscaling" target="_blank" rel="noopener" class="project-link">
+                <i class="fab fa-github" aria-hidden="true"></i> Code
+              </a>
+            </div>
+          </div>
+        </article>
 
         <!-- End-to-End Web App -->
-        <a href="https://github.com/Lalit-Rajpurohit/AWS-Project---Full-End-to-End-Web-App" class="card" target="_blank">
-          <img src="assets/project/p3.jpeg" alt="AWS End-to-End Web Application">
-          <h3>Web App</h3>
-          <p>AWS-Project - Full End-to-End Web App.</p>
-        </a>
+        <article class="project-card" data-category="cloud fullstack">
+          <div class="project-img-wrap">
+            <img src="assets/project/p3.webp" alt="AWS End-to-End Web Application" loading="lazy" width="400" height="240">
+          </div>
+          <div class="project-body">
+            <h3>End-to-End Web App on AWS</h3>
+            <p>Full end-to-end web application deployed on AWS covering networking, compute, and data layers.</p>
+            <div class="project-tech">
+              <span class="tech-chip">AWS</span>
+              <span class="tech-chip">Full-Stack</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://github.com/Lalit-Rajpurohit/AWS-Project---Full-End-to-End-Web-App" target="_blank" rel="noopener" class="project-link">
+                <i class="fab fa-github" aria-hidden="true"></i> Code
+              </a>
+            </div>
+          </div>
+        </article>
 
         <!-- Movie Website -->
-        <a href="https://github.com/Lalit-Rajpurohit/Movie-Booking-Website" class="card" target="_blank">
-          <img src="assets/project/p2.png" alt="Movie Booking Website">
-          <h3>Movie Website</h3>
-          <p>Movie Booking System using Python Django HTML CSS JS.</p>
-        </a>
+        <article class="project-card" data-category="fullstack">
+          <div class="project-img-wrap">
+            <img src="assets/project/p2.webp" alt="Movie Booking Website" loading="lazy" width="400" height="240">
+          </div>
+          <div class="project-body">
+            <h3>Movie Booking Website</h3>
+            <p>Movie booking system built with Django, HTML, CSS, and JavaScript.</p>
+            <div class="project-tech">
+              <span class="tech-chip">Django</span>
+              <span class="tech-chip">Python</span>
+              <span class="tech-chip">JavaScript</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://github.com/Lalit-Rajpurohit/Movie-Booking-Website" target="_blank" rel="noopener" class="project-link">
+                <i class="fab fa-github" aria-hidden="true"></i> Code
+              </a>
+            </div>
+          </div>
+        </article>
 
         <!-- Static Website -->
-        <a href="https://github.com/Lalit-Rajpurohit/Static-website-using-AWS-Amplify-and-Route-53" class="card" target="_blank">
-          <img src="assets/project/p4.jpeg" alt="AWS Amplify Static Website Hosting">
-          <h3>Host Static Web</h3>
-          <p>Host a Static website using AWS Amplify and Route 53.</p>
-        </a>
+        <article class="project-card" data-category="cloud">
+          <div class="project-img-wrap">
+            <img src="assets/project/p4.webp" alt="AWS Amplify Static Website Hosting" loading="lazy" width="400" height="240">
+          </div>
+          <div class="project-body">
+            <h3>Static Site on AWS</h3>
+            <p>Host a static website using AWS Amplify and Route 53 with a custom domain.</p>
+            <div class="project-tech">
+              <span class="tech-chip">Amplify</span>
+              <span class="tech-chip">Route 53</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://github.com/Lalit-Rajpurohit/Static-website-using-AWS-Amplify-and-Route-53" target="_blank" rel="noopener" class="project-link">
+                <i class="fab fa-github" aria-hidden="true"></i> Code
+              </a>
+            </div>
+          </div>
+        </article>
+
       </div>
+
     </section>
 
     <!-- ========================================
@@ -247,57 +482,97 @@
     <section id="experience">
       <h2>Experience</h2>
       <div class="list">
+
         <!-- Education -->
-        <div class="list-item">
+        <div class="list-item timeline-card">
           <h3>
-            <i class="fas fa-graduation-cap"></i>
+            <span class="list-icon"><i class="fas fa-graduation-cap" aria-hidden="true"></i></span>
             Education
           </h3>
 
-          <div class="experience-entry">
-            <p>
-              <em class="experience-title">Bachelors Degree</em> | 2022 - 2025
-              <a href="https://sppu.digitaluniversity.ac/" class="link-highlight">| Savitribai Phule Pune University - Pune</a>
-            </p>
-            <ul class="experience-list">
-              <li>Bachelor of Business Administration in Computer Applications.</li>
-              <li>IT consulting, software development, business analytics, digital marketing, and tech-driven entrepreneurship</li>
-            </ul>
-          </div>
+          <ol class="timeline">
+            <li class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <div class="timeline-head">
+                  <h4 class="timeline-role">Bachelor of Business Administration</h4>
+                  <span class="timeline-date">2022 – 2025</span>
+                </div>
+                <p class="timeline-org">
+                  <a href="https://sppu.digitaluniversity.ac/" target="_blank" rel="noopener">Savitribai Phule Pune University, Pune</a>
+                </p>
+                <p class="timeline-desc">
+                  BBA in Computer Applications — IT consulting, software development,
+                  business analytics, digital marketing, and tech-driven entrepreneurship.
+                </p>
+              </div>
+            </li>
 
-          <hr class="experience-divider">
-
-          <div class="experience-entry">
-            <p>
-              <em class="experience-title">Cloud and DevOps Expert Program</em> | 2025 - Present |
-              <a href="https://www.cloudthat.com/" class="link-highlight">CloudThat</a>
-            </p>
-            <ul class="experience-list">
-              <li>The Cloud and DevOps Expert Program by CloudThat covers <strong>AWS, Azure, Linux, and DevOps tools like Docker, Kubernetes, and Terraform</strong>.</li>
-              <li>Implemented CI/CD with Jenkins & GitLab CI.</li>
-            </ul>
-          </div>
+            <li class="timeline-item is-current">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <div class="timeline-head">
+                  <h4 class="timeline-role">Cloud &amp; DevOps Expert Program</h4>
+                  <span class="timeline-date">2025 – Present</span>
+                </div>
+                <p class="timeline-org">
+                  <a href="https://www.cloudthat.com/" target="_blank" rel="noopener">CloudThat</a>
+                </p>
+                <p class="timeline-desc">
+                  Intensive training in <strong>AWS, Azure, Linux</strong>, and core DevOps tooling.
+                  Implemented production-grade CI/CD pipelines with Jenkins &amp; GitLab CI.
+                </p>
+                <div class="timeline-tags">
+                  <span class="tech-chip">AWS</span>
+                  <span class="tech-chip">Azure</span>
+                  <span class="tech-chip">Docker</span>
+                  <span class="tech-chip">Kubernetes</span>
+                  <span class="tech-chip">Terraform</span>
+                  <span class="tech-chip">Jenkins</span>
+                </div>
+              </div>
+            </li>
+          </ol>
         </div>
 
         <!-- Work Experience -->
-        <div class="list-item">
+        <div class="list-item timeline-card">
           <h3>
-            <i class="fas fa-briefcase"></i>
-            Experience
+            <span class="list-icon"><i class="fas fa-briefcase" aria-hidden="true"></i></span>
+            Work Experience
           </h3>
 
-          <div class="experience-entry">
-            <h4>Web Development & Cloud Intern</h4>
-            <p><em class="experience-title">Jetro Solutions (Remote)</em> | Dec 2025 – Present</p>
-            <ul class="experience-list">
-              <li>Developed and deployed the live production website <a href="https://vilo-store.com" target="_blank" class="link-highlight">vilo-store.com</a> as part of the internship project.</li>
-              <li>Worked on frontend and backend development using modern web technologies.</li>
-              <li>Deployed and managed applications on cloud infrastructure ensuring availability and performance.</li>
-              <li>Collaborated on application deployment workflows and version control using Git.</li>
-              <li>Gained hands-on experience in cloud deployment, troubleshooting, and maintaining production web applications.</li>
-            </ul>
-          </div>
+          <ol class="timeline">
+            <li class="timeline-item is-current">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <div class="timeline-head">
+                  <h4 class="timeline-role">Web Development &amp; Cloud Intern</h4>
+                  <span class="timeline-date">Dec 2025 – Present</span>
+                </div>
+                <p class="timeline-org">Jetro Solutions · Remote</p>
+                <p class="timeline-desc">
+                  Developed and deployed the live production platform
+                  <a href="https://vilo-store.com" target="_blank" rel="noopener">vilo-store.com</a>
+                  — end-to-end ownership across frontend, backend, and cloud deployment.
+                </p>
+                <ul class="timeline-bullets">
+                  <li>Built features across the stack using modern web technologies.</li>
+                  <li>Deployed &amp; managed applications on cloud infrastructure for availability and performance.</li>
+                  <li>Collaborated on deployment workflows and Git-based version control.</li>
+                  <li>Hands-on cloud deployment, troubleshooting, and production maintenance.</li>
+                </ul>
+                <div class="timeline-tags">
+                  <span class="tech-chip">Full-Stack</span>
+                  <span class="tech-chip">Cloud</span>
+                  <span class="tech-chip">Git</span>
+                  <span class="tech-chip">Production</span>
+                </div>
+              </div>
+            </li>
+          </ol>
         </div>
+
       </div>
     </section>
 
@@ -309,12 +584,12 @@
 
       <div class="skills-container">
         <!-- DevOps & Automation -->
-        <div class="skill-category">
+        <div class="skill-category" data-accent="devops">
           <div class="skill-category-header">
             <div class="skill-category-icon">
-              <i class="fas fa-cogs"></i>
+              <i class="fas fa-cogs" aria-hidden="true"></i>
             </div>
-            <h3 class="skill-category-title">DevOps & Automation</h3>
+            <h3 class="skill-category-title">DevOps &amp; Automation</h3>
           </div>
           <div class="skill-tags">
             <span class="skill-tag">Docker</span>
@@ -334,12 +609,12 @@
         </div>
 
         <!-- AI & Machine Learning -->
-        <div class="skill-category">
+        <div class="skill-category" data-accent="ai">
           <div class="skill-category-header">
             <div class="skill-category-icon">
-              <i class="fas fa-brain"></i>
+              <i class="fas fa-brain" aria-hidden="true"></i>
             </div>
-            <h3 class="skill-category-title">AI & Machine Learning</h3>
+            <h3 class="skill-category-title">AI &amp; Machine Learning</h3>
           </div>
           <div class="skill-tags">
             <span class="skill-tag">OpenAI API</span>
@@ -362,12 +637,12 @@
         </div>
 
         <!-- Cloud & Infrastructure -->
-        <div class="skill-category">
+        <div class="skill-category" data-accent="cloud">
           <div class="skill-category-header">
             <div class="skill-category-icon">
-              <i class="fas fa-cloud"></i>
+              <i class="fas fa-cloud" aria-hidden="true"></i>
             </div>
-            <h3 class="skill-category-title">Cloud & Infrastructure</h3>
+            <h3 class="skill-category-title">Cloud &amp; Infrastructure</h3>
           </div>
           <div class="skill-tags">
             <span class="skill-tag">AWS</span>
@@ -387,10 +662,10 @@
         </div>
 
         <!-- Web Development -->
-        <div class="skill-category">
+        <div class="skill-category" data-accent="web">
           <div class="skill-category-header">
             <div class="skill-category-icon">
-              <i class="fas fa-laptop-code"></i>
+              <i class="fas fa-laptop-code" aria-hidden="true"></i>
             </div>
             <h3 class="skill-category-title">Web Development</h3>
           </div>
@@ -413,10 +688,10 @@
         </div>
 
         <!-- Databases -->
-        <div class="skill-category">
+        <div class="skill-category" data-accent="db">
           <div class="skill-category-header">
             <div class="skill-category-icon">
-              <i class="fas fa-database"></i>
+              <i class="fas fa-database" aria-hidden="true"></i>
             </div>
             <h3 class="skill-category-title">Databases</h3>
           </div>
@@ -432,7 +707,7 @@
             <span class="skill-tag">NoSQL</span>
             <span class="skill-tag">Database Design</span>
             <span class="skill-tag">Query Optimization</span>
-            <span class="skill-tag">Backup & Recovery</span>
+            <span class="skill-tag">Backup &amp; Recovery</span>
           </div>
         </div>
       </div>
@@ -443,36 +718,85 @@
     ======================================== -->
     <section id="contact">
       <h2>Contact</h2>
-      <div class="contact-container">
-        <!-- Contact Info -->
-        <div class="info">
-          <p><strong>Email:</strong> rajpurohitlalit181@gmail.com</p>
-          <p><strong>Phone:</strong> +91-7420074104</p>
-          <p><strong>Location:</strong> Pune, India</p>
-          <div class="socials">
-            <a href="https://github.com/Lalit-Rajpurohit" target="_blank" aria-label="GitHub">
-              <i class="fab fa-github"></i>
-            </a>
-            <a href="https://www.linkedin.com/in/lalit-rajpurohit" target="_blank" aria-label="LinkedIn">
-              <i class="fab fa-linkedin"></i>
-            </a>
-          </div>
+      <p class="section-lede">
+        Have a project, role, or collaboration in mind? Drop a message below — I usually reply within a Hour.
+      </p>
+
+      <div class="contact-wrap">
+        <!-- Top meta row -->
+        <div class="contact-top">
+          <a href="mailto:rajpurohitlalit181@gmail.com" class="contact-top-item">
+            <i class="fas fa-envelope" aria-hidden="true"></i>
+            <span>rajpurohitlalit181@gmail.com</span>
+          </a>
+          <a href="https://www.linkedin.com/in/lalit-rajpurohit" target="_blank" rel="noopener" class="contact-top-item">
+            <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+            <span>LinkedIn</span>
+          </a>
+          <a href="https://github.com/Lalit-Rajpurohit" target="_blank" rel="noopener" class="contact-top-item">
+            <i class="fab fa-github" aria-hidden="true"></i>
+            <span>GitHub</span>
+          </a>
+          <span class="contact-top-item contact-top-static">
+            <i class="fas fa-location-dot" aria-hidden="true"></i>
+            <span>Pune, India</span>
+          </span>
         </div>
 
         <!-- Contact Form -->
-        <form id="contactsform" action="#" method="POST">
-          <input type="text" name="name" placeholder="Your Name" required>
-          <input type="email" name="email" placeholder="Your Email" required>
-          <input type="text" name="subject" placeholder="Your Subject" required>
-          <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-          <button type="submit">Send Message</button>
+        <form id="contactsform" action="#" method="POST" novalidate>
+          <div class="form-row">
+            <div class="form-field">
+              <input id="cf-name" type="text" name="name" placeholder=" " autocomplete="name" required maxlength="100">
+              <label for="cf-name">Your Name</label>
+            </div>
+            <div class="form-field">
+              <input id="cf-email" type="email" name="email" placeholder=" " autocomplete="email" required maxlength="150">
+              <label for="cf-email">Your Email</label>
+            </div>
+          </div>
+
+          <div class="form-field">
+            <input id="cf-subject" type="text" name="subject" placeholder=" " required maxlength="150">
+            <label for="cf-subject">Subject</label>
+          </div>
+
+          <div class="form-field">
+            <textarea id="cf-message" name="message" rows="6" placeholder=" " required maxlength="2000"></textarea>
+            <label for="cf-message">Your Message</label>
+          </div>
+
+          <!-- Honeypot: real users won't fill this -->
+          <div class="hp-field" aria-hidden="true">
+            <label for="cf-website">Website (leave blank)</label>
+            <input id="cf-website" type="text" name="website" tabindex="-1" autocomplete="off">
+          </div>
+
+          <div class="form-footer">
+            <button type="submit" class="form-submit">
+              <span class="btn-spinner" aria-hidden="true"></span>
+              <span class="btn-label">Send Message</span>
+              <i class="fas fa-paper-plane btn-icon" aria-hidden="true"></i>
+            </button>
+            <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+          </div>
         </form>
       </div>
     </section>
 
+    </main>
+
     <!-- Footer -->
     <footer>
-      <p>&copy; 2026 Lalit Rajpurohit. All rights reserved.</p>
+      <div class="footer-inner">
+        <p>&copy; 2026 Lalit Rajpurohit. All rights reserved.</p>
+        <div class="footer-links">
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+          <a href="https://github.com/Lalit-Rajpurohit" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
     </footer>
 
   </div>

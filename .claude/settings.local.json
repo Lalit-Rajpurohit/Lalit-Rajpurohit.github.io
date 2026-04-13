@@ -1,7 +1,10 @@
 {
   "permissions": {
     "allow": [
-      "Bash(dir /s \"C:\\\\code\\\\TempPortfolio\\\\real\\\\assets\")"
+      "Bash(dir /s \"C:\\\\code\\\\TempPortfolio\\\\real\\\\assets\")",
+      "Bash(python -c \"from PIL import Image; print\\('pillow ok'\\)\")",
+      "Bash(node -e \"console.log\\('node',process.version\\)\")",
+      "Bash(py:*)"
     ]
   }
 }
