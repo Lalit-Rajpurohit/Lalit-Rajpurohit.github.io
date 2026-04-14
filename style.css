@@ -3266,6 +3266,29 @@ body,
   border-color: rgba(229, 201, 162, 0.14);
 }
 
+[data-theme="dark"] #navbar .mini-profile,
+[data-theme="dark"] #navbar .nav-links a,
+[data-theme="dark"] #navbar .nav-socials a,
+[data-theme="dark"] #navbar .nav-toggle,
+[data-theme="dark"] #navbar .theme-toggle {
+  color: var(--color-primary);
+}
+
+[data-theme="dark"] #navbar .nav-links a:hover,
+[data-theme="dark"] #navbar .nav-socials a:hover {
+  background: rgba(229, 201, 162, 0.12);
+  color: #fff;
+}
+
+[data-theme="dark"] #navbar .nav-links a.is-active {
+  background: rgba(229, 201, 162, 0.18);
+  color: var(--color-primary);
+}
+
+[data-theme="dark"] #navbar .mini-profile img {
+  border-color: var(--color-primary);
+}
+
 #navbar .mini-profile {
   display: inline-flex;
   align-items: center;
