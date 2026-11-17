@@ -9,18 +9,6 @@
   <meta name="author" content="Lalit Rajpurohit">
   <meta name="theme-color" content="#1F3526">
 
-  <!-- Theme init (inline to avoid FOUC) -->
-  <script>
-    (function () {
-      try {
-        var stored = localStorage.getItem('theme');
-        var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-        var theme = stored || (prefersDark ? 'dark' : 'light');
-        document.documentElement.setAttribute('data-theme', theme);
-      } catch (e) {}
-    })();
-  </script>
-
   <title>Lalit Rajpurohit | Cloud & DevOps Engineer | AI Integration Specialist</title>
 
   <!-- Favicon -->
@@ -87,12 +75,6 @@
       <img src="assets/lalit.webp" alt="" width="46" height="46">
       <span>Lalit</span>
     </div>
-
-    <!-- Theme toggle -->
-    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" type="button">
-      <i class="fa-solid fa-moon theme-icon-dark" aria-hidden="true"></i>
-      <i class="fa-solid fa-sun theme-icon-light" aria-hidden="true"></i>
-    </button>
 
     <!-- Mobile Toggle -->
     <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-menu">

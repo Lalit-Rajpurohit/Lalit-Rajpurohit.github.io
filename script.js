@@ -4,39 +4,6 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  /* ----- Theme toggle ----- */
-  const themeToggle = document.getElementById('theme-toggle');
-  const root = document.documentElement;
-
-  const applyTheme = (theme) => {
-    root.setAttribute('data-theme', theme);
-    if (themeToggle) {
-      themeToggle.setAttribute('aria-pressed', String(theme === 'dark'));
-      themeToggle.setAttribute('aria-label',
-        theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
-    }
-  };
-
-  applyTheme(root.getAttribute('data-theme') || 'light');
-
-  if (themeToggle) {
-    themeToggle.addEventListener('click', () => {
-      const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-      applyTheme(next);
-      try { localStorage.setItem('theme', next); } catch (e) {}
-    });
-  }
-
-  // Follow system changes if user hasn't explicitly set a preference
-  if (window.matchMedia) {
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-      try {
-        if (localStorage.getItem('theme')) return;
-      } catch (err) {}
-      applyTheme(e.matches ? 'dark' : 'light');
-    });
-  }
-
   /* ----- Mobile nav drawer ----- */
   const navToggle = document.querySelector('.nav-toggle');
   const navMenu = document.getElementById('nav-menu');
