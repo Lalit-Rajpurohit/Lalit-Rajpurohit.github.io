@@ -648,6 +648,7 @@ header nav li:hover {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
+  align-items: start;
 }
 
 .list-item {
@@ -1515,10 +1516,6 @@ footer {
 
 /* Nav Collapse (1510px) */
 @media (max-width: 1510px) {
-  .wrapper {
-    margin-left: 0;
-  }
-
   .nav {
     position: fixed;
     top: 20px;
@@ -3122,9 +3119,9 @@ body,
   gap: 0.3rem;
 }
 
-.timeline-bullets li {
+.list-item .timeline-bullets li {
   position: relative;
-  padding-left: 1.1rem;
+  padding: 0 0 0 1.1rem;
   font-size: 0.82rem;
   line-height: 1.55;
   color: var(--color-text);
